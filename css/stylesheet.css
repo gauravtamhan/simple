@@ -1,0 +1,308 @@
+
+html, body, .full {
+	height: 100%;
+  color: #444;
+}
+
+div.bumper {
+  padding: 64px 0;
+}
+
+div.small-bumper {
+  padding: 30px 0;
+}
+
+/*h1 {
+	font-weight: 200;
+}*/
+
+.thin-text a, .side-nav li>a {
+	font-weight: 300;
+}
+
+.side-nav {
+	background-color: #000;
+}
+
+.side-nav li>a {
+	color: #fff;
+	padding: 0 20px;
+}
+
+nav {
+	box-shadow: inherit;
+  background-color: #fff;
+}
+
+/*.fadeOut {
+  position: fixed;
+  height: 105px;
+  right: 0;
+  left: 0;
+  margin-bottom: 0px;
+  z-index: 996;
+  background: -webkit-linear-gradient(
+        rgba(255, 255, 255, 1) 70%,
+        rgba(255, 255, 255, 0) 100%
+    );
+}*/
+
+.fadeOut {
+  position: fixed;
+  height: 50px;
+  right: 0;
+  left: 0;
+  top: 0;
+  margin-top: 4em;
+  margin-bottom: 0px;
+  z-index: 996;
+  background: -webkit-linear-gradient(
+    rgba(255, 255, 255, 1) 10%,
+    rgba(255, 255, 255, 0) 80%
+    );
+}
+
+span.subtitle {
+  color: #bbb;
+  text-transform: uppercase;
+  font-weight: 300;
+}
+
+.nav-fixed {
+  position: fixed;
+  right: 0;
+  left: 0;
+  top: 0;
+  margin-bottom: 0px;
+  z-index: 997;
+}
+
+nav .brand-logo {
+	left: 15px;
+  transform: initial;
+}
+
+nav .button-collapse {
+  float: right;
+}
+
+a.button-collapse i {
+	color: #1de9c3;
+}
+
+/* ------ Full Nav Hover Animation ------*/
+nav ul.full-nav a {
+  position: relative;
+  color: #000;
+  text-decoration: none;
+  padding-left: 0;
+  padding-right: 0;
+  margin: 0 10px;
+}
+
+nav ul.full-nav a:hover {
+  color: #000;
+  background-color: transparent;
+}
+
+nav ul.full-nav a:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #000;
+  visibility: hidden;
+  -webkit-transform: scaleX(0);
+  transform: scaleX(0);
+  -webkit-transition: all 0.2s ease 0s;
+  transition: all 0.2s ease 0s;
+}
+
+nav ul.full-nav a:hover:before {
+  visibility: visible;
+  -webkit-transform: scaleX(1);
+  transform: scaleX(1);
+}
+
+nav ul.full-nav a.active:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  visibility: visible;
+  -webkit-transform: scaleX(1);
+  transform: scaleX(1);
+}
+
+/* ------ END: Full Nav Hover Animation ------*/
+
+/* --------- Side Nav Hover Animation --------*/
+ul.side-nav a {
+  position: relative;
+  color: #fff;
+  text-decoration: none;
+}
+
+ul.side-nav a:hover {
+  color: #fff;
+  background-color: transparent;
+}
+
+ul.side-nav a:before {
+  content: "";
+  position: absolute;
+  width: 2px;
+  height: 100%;
+  bottom: 0;
+  right: 0;
+  background-color: #1de9c3;
+  visibility: hidden;
+  -webkit-transform: scaleY(0);
+  transform: scaleY(0);
+  -webkit-transition: all 0.2s ease 0s;
+  transition: all 0.2s ease 0s;
+}
+
+ul.side-nav a:hover:before {
+  visibility: visible;
+  -webkit-transform: scaleY(1);
+  transform: scaleY(1);
+}
+
+ul.side-nav a.active-side:before {
+  content: "";
+  position: absolute;
+  width: 2px;
+  height: 100%;
+  bottom: 0;
+  right: 0;
+  background-color: #1de9c3;
+  visibility: visible;
+  -webkit-transform: scaleY(1);
+  transform: scaleY(1);
+}
+/* ------ END: Side Nav Hover Animation ------*/
+
+.line-break {
+  margin: 40px 0;
+  height: 1px;
+  overflow: hidden;
+  background-color: #e0e0e0
+}
+
+.btn-flat {
+  border: 1px solid #26a69a;
+  /*border: 1px solid #1de9c3;*/
+  border-radius: 25px;
+  color: #26a69a;
+  /*color: #1de9c3;*/
+}
+
+div.links a:hover {
+  outline: 0;
+  background-color: #26a69a;
+  /*background-color: #1de9c3;*/
+  color: white;
+}
+
+div.post-meta-data {
+  padding-top: 20px;
+}
+
+div.post-meta-data a {
+  font-size: 12px;
+  color: #444;
+  text-transform: uppercase;
+}
+
+div.post-meta-data i {
+  padding-right: 10px;
+}
+
+div.post-meta-data a, div.post-meta-data i {
+  vertical-align: middle;
+}
+
+div.post-meta-data a:hover {
+  color: #444;
+  background-color: white;
+  text-decoration: underline;
+}
+
+form label, .comments label {
+  text-transform: uppercase;
+}
+
+div.footer {
+  background-color: #222;
+  width: 100%;
+}
+
+div.footer .row {
+  margin-bottom: 0;
+  padding: 20px 0;
+}
+
+div.footer p {
+  color: white;
+  text-transform: uppercase;
+  font-weight: 300;
+}
+
+@media only screen and (max-width: 640px) {
+  div.footer p {
+    font-size: 12px;
+  }
+}
+
+@media only screen and (max-width: 375px) {
+div.footer p {
+    font-size: 10px;
+  }
+}
+
+@media only screen and (max-width: 360px) {
+  h1 {
+    font-size: 3.5rem;
+  }
+}
+
+div.comments ul p {
+  margin-top: 0;
+  margin-bottom: 5px;
+}
+
+div.comments ul p.name {
+  font-weight: 500;
+}
+
+div.comments ul p.date {
+  text-transform: uppercase;
+  color: #bbb;
+}
+
+ul img.responsive-img {
+  max-width: 60px;
+  width: 100%;
+}
+
+div.comment-spacer {
+  margin-top: 10px;
+  margin-bottom: 20px;
+  height: 1px;
+  overflow: hidden;
+  background-color: #e0e0e0
+}
+
+blockquote {
+  border-left-color: #26a69a;
+  border-left-width: 3px;
+}
+
+blockquote p.flow-text {
+  font-weight: 400;
+}
