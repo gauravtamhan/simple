@@ -304,5 +304,15 @@ blockquote {
 }
 
 blockquote p.flow-text {
-  font-weight: 400;
+  font-weight: 300;
+  color: #666;
+  font-style: italic;
+}
+
+div.wp-caption p {
+  margin-top: 2px;
+  text-align: center;
+  color: #828282;
+  text-transform: uppercase;
+  font-weight: 300;
 }

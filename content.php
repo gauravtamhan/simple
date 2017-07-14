@@ -19,15 +19,18 @@
 </div> -->
 <div class="row">
   <div class="col m10 offset-m1 links content">
-    <h4><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4>
-    <span class="subtitle">Posted by <?php the_author(); ?> on <?php the_date('n/j/Y'); ?></span>
+    <h4><?php the_title(); ?></h4>
+    <span class="subtitle">By <?php the_author(); ?> on <?php the_time(get_option('date_format')); ?> - <?php the_time(); ?></span>
 
-    <?php the_content(); ?>
-    <a href="<?php comments_link(); ?>">
-      <?php
-      printf( _nx( '%1$s Comment', '%1$s Comments', get_comments_number(), 'comments title', 'textdomain'), number_format_i18n(get_comments_number()));
-      ?>
-    </a>
+    <?php the_excerpt(); ?>
+    <a href="<?php the_permalink(); ?>" class="waves-effect waves-teal btn-flat">Read More</a>
+    <div class="post-meta-data">
+      <a href="<?php comments_link(); ?>"><i class="tiny material-icons">chat_bubble</i>
+        <?php
+        printf( _nx( '%1$s Comment', '%1$s Comments', get_comments_number(), 'comments title', 'textdomain'), number_format_i18n(get_comments_number()));
+        ?>
+      </a>
+    </div>
     <div class="line-break"></div>
   </div>
 </div>

@@ -34,6 +34,6 @@
   </nav>
   <div class="fadeOut"></div>
   <ul class="side-nav thin-text" id="mobile-demo">
-    <li><a class="waves-effect waves-teal" href="index.html">Home</a></li>
+    <li><a class="waves-effect waves-teal" href="<?php echo get_bloginfo( 'wpurl' );?>">Home</a></li>
     <?php wp_list_pages('&title_li='); ?>
   </ul>

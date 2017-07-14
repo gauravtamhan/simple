@@ -5,6 +5,7 @@
  	$(".button-collapse").sideNav();
     // $('.materialboxed').materialbox();
 
+
  	$(function() {
         // this will get the full URL at the address bar
         var url = window.location.href;
@@ -40,6 +41,8 @@
 
 
     $('div.content p').addClass('flow-text');
+    $('div.content ul li').addClass('flow-text')
+    $("div.wp-caption p").removeClass('flow-text');
     $('img').addClass('responsive-img');
     // $('blockquote').addClass('grey lighten-4');
 
