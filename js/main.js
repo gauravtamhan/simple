@@ -46,8 +46,18 @@ jQuery(document).ready(function($) {
   $('div.content ol li').addClass('flow-text');
   $("div.wp-caption p").removeClass('flow-text');
   $('img').addClass('responsive-img');
-  // $('blockquote').addClass('grey lighten-4');
 
+  // Put "Leave a Reply" section into row-col divs
+  var elements = $('div#respond').children();
+  elements.detach();
+  $('div#respond').prepend('<div class="row no-row-spacing"><div class="col m10 offset-m1">');
+  $('div#respond>div>div').append(elements[0]);
+  $('div#respond').append('<div class="row"><div class="col s12 m10 offset-m1">');
+  $('div#respond div:nth-child(2)>div').append(elements[1]);
+
+  // Post Comment button
+  $('form p.form-submit').addClass('links');
+  $('form p.form-submit #submit').addClass('waves-effect waves-teal btn-flat')
 });
 
 

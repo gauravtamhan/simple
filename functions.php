@@ -71,3 +71,64 @@ function fixed_img_caption_shortcode($attr, $content = null) {
 // }
 // remove_filter('get_the_excerpt', 'wp_trim_excerpt');
 // add_filter('get_the_excerpt', 'improved_trim_excerpt');
+
+// function image_tag_class($class) {
+//     $class = ' responsive-img';
+//     return $class;
+// }
+// add_filter('get_image_tag_class', 'image_tag_class' );
+
+function mytheme_comment($comment, $args, $depth) {
+    if ( 'div' === $args['style'] ) {
+        $tag       = 'div';
+        $add_below = 'comment';
+    } else {
+        $tag       = 'li';
+        $add_below = 'div-comment';
+    }
+    ?>
+    <<?php echo $tag ?> <?php comment_class( empty( $args['has_children'] ) ? '' : 'parent' ) ?> id="comment-<?php comment_ID() ?>">
+    <?php if ( 'div' != $args['style'] ) : ?>
+        <div id="div-comment-<?php comment_ID() ?>" class="comment-body">
+    <?php endif; ?>
+    <div class="comment-author vcard">
+        <div class="row">
+            <div class="col s2">
+                <?php if ( $args['avatar_size'] != 0 ) echo get_avatar( $comment, $args['avatar_size'] ); ?>
+            </div>
+            <div class="col s10">
+                <?php printf( __( '<p class="name">%s</p>'), get_comment_author_link() ); ?>
+                <?php
+                    /* translators: 1: date, 2: time */
+                    printf( __('<p class="date">%1$s at %2$s</p>'), get_comment_date(),  get_comment_time() );
+                ?>
+            </div>
+        </div>
+    </div>
+    <?php if ( $comment->comment_approved == '0' ) : ?>
+         <em class="comment-awaiting-moderation"><?php _e( 'Your comment is awaiting moderation.' ); ?></em>
+          <br />
+    <?php endif; ?>
+
+    <div class="row no-row-spacing">
+        <div class="col s10 push-s2">
+            <?php comment_text(); ?>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col s10 push-s2">
+            <div class="reply post-meta-data">
+                <?php comment_reply_link( array_merge( $args, array( 'add_below' => $add_below, 'before'=>'<i class="tiny material-icons">reply</i>', 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) ); ?>
+            </div>
+        </div>
+    </div>
+
+    <div class="comment-spacer"></div>
+
+    <?php if ( 'div' != $args['style'] ) : ?>
+    </div>
+    <?php endif; ?>
+
+    <?php
+    }

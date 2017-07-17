@@ -14,8 +14,10 @@
     <?php
     if ( have_posts() ) : while ( have_posts() ) : the_post();
 
-      get_template_part( 'content-single', get_post_format() );
-
+      get_template_part( 'content-single', get_post_format() ); ?>
+  </div>
+  <div class='container comments'>
+    <?php
       if ( comments_open() || get_comments_number() ) :
         comments_template();
       endif;
@@ -23,14 +25,6 @@
     endwhile; endif;
     ?>
 
-    <!-- <div class="row">
-      <div class="col m10 offset-m1">
-        <p class="flow-text">Cliche godard scenester, affogato cornhole pop-up humblebrag ullamco post-ironic DIY anim before they sold out. Heirloom kitsch flexitarian, williamsburg sriracha nostrud semiotics pickled flannel green juice ut fugiat sartorial. VHS do knausgaard dolore. Jean shorts vero cillum assumenda readymade, franzen paleo. Umami accusamus yr cupidatat. Aliqua letterpress chia, cardigan green juice synth jean shorts PBR&B gluten-free. Bespoke fixie excepteur street art shabby chic, microdosing brooklyn selfies mixtape duis food truck pinterest nisi austin.</p>
-        <img class="responsive-img materialboxed" src="https://static.pexels.com/photos/169573/pexels-photo-169573.jpeg">
-        <p class="flow-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sed ullamcorper ligula. Ut mollis vehicula eros, in semper est imperdiet sit amet. Phasellus gravida condimentum commodo. Curabitur efficitur nisl blandit laoreet sollicitudin. Suspendisse eu quam lacus. Vestibulum vitae turpis urna. Nulla facilisi. Etiam feugiat ex vitae neque iaculis viverra. Sed mollis ornare vestibulum. Fusce consectetur sapien vitae elementum tempus. Duis elementum sem ante, et mattis felis pulvinar at. Maecenas urna arcu, finibus ac vehicula vitae, commodo in risus.</p>
-        <p class="flow-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sed ullamcorper ligula. Ut mollis vehicula eros, in semper est imperdiet sit amet. Phasellus gravida condimentum commodo. Curabitur efficitur nisl blandit laoreet sollicitudin. Suspendisse eu quam lacus. Vestibulum vitae turpis urna. Nulla facilisi. Etiam feugiat ex vitae neque iaculis viverra. Sed mollis ornare vestibulum. Fusce consectetur sapien vitae elementum tempus. Duis elementum sem ante, et mattis felis pulvinar at. Maecenas urna arcu, finibus ac vehicula vitae, commodo in risus.</p>
-      </div>
-    </div> -->
   </div>
 
 <!-- Footer -->
