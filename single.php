@@ -16,6 +16,7 @@
 
       get_template_part( 'content-single', get_post_format() ); ?>
   </div>
+  <div class="small-bumper"></div>
   <div class='container comments'>
     <?php
       if ( comments_open() || get_comments_number() ) :
