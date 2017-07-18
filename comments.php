@@ -45,6 +45,14 @@
 
       comment_form($comments_args);
     ?>
+    <?php if ( ! comments_open() && get_comments_number() && post_type_supports( get_post_type(), 'comments' ) ) : ?>
+      <div class="row">
+        <div class="col s12 m10 offset-m1">
+          <p class="no-comments"><?php _e('Commenting is closed for this post.'); ?></p>
+        </div>
+      </div>
+    <?php endif; ?>
+
     <?php if ( have_comments() ) : ?>
       <div class="small-bumper"></div>
       <div class="row">
@@ -62,10 +70,6 @@
         </div>
       </div>
     <?php endif; ?>
-    <?php if ( ! comments_open() && get_comments_number() && post_type_supports( get_post_type(), 'comments' ) ) : ?>
-      <p class="no-comments">
-        <?php _e( 'Comments are closed.' ); ?>
-      </p>
-    <?php endif; ?>
+
 
   </div>

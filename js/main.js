@@ -40,12 +40,13 @@ jQuery(document).ready(function($) {
   // .addIndicators() // add indicators (requires plugin)
   .addTo(controller);
 
-
+  $("ul.side-nav a").addClass('waves-effect waves-teal');
   $('div.content p').addClass('flow-text');
   $('div.content ul li').addClass('flow-text');
   $('div.content ol li').addClass('flow-text');
   $("div.wp-caption p").removeClass('flow-text');
   $('img').addClass('responsive-img');
+  $('img.avatar').addClass('circle');
 
   // Put "Leave a Reply" section into row-col divs
   var elements = $('div#respond').children();

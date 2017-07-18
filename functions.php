@@ -102,14 +102,12 @@ function mytheme_comment($comment, $args, $depth) {
                     /* translators: 1: date, 2: time */
                     printf( __('<p class="date">%1$s at %2$s</p>'), get_comment_date(),  get_comment_time() );
                 ?>
+                <?php if ( $comment->comment_approved == '0' ) : ?>
+                     <p class="comment-awaiting-moderation"><?php _e( 'Your comment is awaiting moderation.' ); ?></p>
+                <?php endif; ?>
             </div>
         </div>
     </div>
-    <?php if ( $comment->comment_approved == '0' ) : ?>
-         <em class="comment-awaiting-moderation"><?php _e( 'Your comment is awaiting moderation.' ); ?></em>
-          <br />
-    <?php endif; ?>
-
     <div class="row no-row-spacing">
         <div class="col s10 push-s2">
             <?php comment_text(); ?>

@@ -12,8 +12,9 @@ div.small-bumper {
   padding: 30px 0;
 }
 
-/*h1 {
-	font-weight: 200;
+/* makes button links text light teal too*/
+/*div.content a {
+  color: #1DE9C3;
 }*/
 
 .thin-text a, .side-nav li>a {
@@ -202,7 +203,7 @@ ul.side-nav a.active-side:before {
   /*color: #1de9c3;*/
 }
 
-div.links a:hover, p.links i:hover {
+div.links a.btn-flat:hover, p.links i:hover {
   outline: 0;
   background-color: #26a69a;
   /*background-color: #1de9c3;*/
@@ -286,6 +287,24 @@ div.comments ul p.date {
   color: #bbb;
 }
 
+div.comments ul p.comment-awaiting-moderation {
+    text-transform: uppercase;
+    font-weight: 500;
+    margin-top: 15px;
+
+    font-style: italic;
+    font-weight: 300;
+    color: #999;
+}
+
+p.no-comments {
+  text-transform: uppercase;
+  text-align: center;
+  font-style: italic;
+  font-weight: 300;
+  color: #999;
+}
+
 ul img.responsive-img {
   max-width: 60px;
   width: 100%;
@@ -326,10 +345,6 @@ form p.comment-notes {
   color: #666;
 }
 
-a {
-  color: #1DE9C3;
-}
-
 h5#reply-title a {
   color: #1DE9C3;
   border-bottom: 2px solid rgba(29,233,195, 0);
@@ -362,4 +377,12 @@ h5#reply-title span a {
 
 h5#reply-title span a:hover {
   border-bottom: 1px solid rgba(136,136,136, 1);
+}
+
+ul.children {
+  margin-left: 6%;
+}
+
+div.content h4 {
+  text-transform: capitalize;
 }
