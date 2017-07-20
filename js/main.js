@@ -60,6 +60,3 @@ jQuery(document).ready(function($) {
   $('form p.form-submit').addClass('links');
   $('form p.form-submit #submit').addClass('waves-effect waves-teal btn-flat')
 });
-
-
-

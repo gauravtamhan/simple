@@ -3,6 +3,5 @@
 
     <?php the_content(); ?>
 
-    </a>
   </div>
 </div>

@@ -196,17 +196,14 @@ ul.side-nav a.active-side:before {
 }
 
 .btn-flat {
-  border: 1px solid #26a69a;
-  /*border: 1px solid #1de9c3;*/
+  border: 1px solid #42C4A5;
   border-radius: 25px;
-  color: #26a69a;
-  /*color: #1de9c3;*/
+  color: #42C4A5;
 }
 
 div.links a.btn-flat:hover, p.links i:hover {
   outline: 0;
-  background-color: #26a69a;
-  /*background-color: #1de9c3;*/
+  background-color: #42C4A5;
   color: white;
 }
 
@@ -319,7 +316,7 @@ div.comment-spacer {
 }
 
 blockquote {
-  border-left-color: #26a69a;
+  border-left-color: #42C4A5;
   border-left-width: 3px;
 }
 
@@ -385,4 +382,30 @@ ul.children {
 
 div.content h4 {
   text-transform: capitalize;
+}
+
+div.error h1 {
+  color: #5e5e5e;
+  font-size: 6.4rem;
+}
+
+div.error .error-message {
+  color: #8b8b8b;
+  font-weight: 300;
+  text-transform: uppercase;
+  margin: 0.6rem 0;
+}
+
+.error-message {
+  color: #8b8b8b;
+  margin-bottom: 4rem;
+}
+
+@media only screen and (max-width: 375px) {
+  div.error h3.error-message {
+    font-size: 2.22rem;
+  }
+  div.error h1 {
+    font-size: 5.4rem;
+  }
 }
