@@ -409,3 +409,39 @@ div.error .error-message {
     font-size: 5.4rem;
   }
 }
+
+.search-position {
+  float: right;
+  position: relative;
+  z-index: 1;
+}
+
+@media only screen and (min-width: 993px) {
+  .search-position {
+    /*display: none;*/
+  }
+}
+
+.modal {
+  color: white;
+  background-color: transparent;
+  box-shadow: none;
+  text-align: center;
+  /*width: 40%;*/
+  font-size: 3rem;
+}
+
+.modal input[type=text]:not(.browser-default) {
+  font-size: 3rem;
+  padding: 5px 0;
+}
+
+@media only screen and (max-width: 420px) {
+  .modal {
+      width: 100%;
+  }
+}
+
+ul:not(.browser-default) {
+  padding-left: 4px;
+}

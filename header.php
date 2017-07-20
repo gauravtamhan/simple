@@ -18,10 +18,12 @@
     <div class="nav-wrapper white">
       <a href="<?php echo get_bloginfo( 'wpurl' );?>" class="brand-logo black-text"><i class="material-icons">turned_in_not</i></a>
       <a href="#" data-activates="mobile-demo" class="button-collapse black-text"><i class="material-icons">menu</i></a>
+
       <ul class="right hide-on-med-and-down thin-text full-nav">
         <li><a class="black-text" href="<?php echo get_bloginfo( 'wpurl' );?>">Home</a></li>
         <?php wp_list_pages('&title_li='); ?>
       </ul>
+      <a href="#search-modal" onclick="document.getElementById('search').focus();" class="black-text search-position"><i class="material-icons">search</i></a>
     </div>
   </nav>
   <div class="fadeOut"></div>
@@ -29,3 +31,10 @@
     <li><a class="waves-effect waves-teal" href="<?php echo get_bloginfo( 'wpurl' );?>">Home</a></li>
     <?php wp_list_pages('&title_li='); ?>
   </ul>
+
+  <!-- search modal -->
+  <div id="search-modal" class="modal">
+    <div class="modal-content">
+      <input placeholder="Search" id="search" type="text">
+    </div>
+  </div>
