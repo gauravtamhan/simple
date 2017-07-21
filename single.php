@@ -8,7 +8,7 @@
 
 
   <!-- Blog body -->
-  <div class="container">
+  <div class="container content">
 
     <!-- page content -->
     <?php

@@ -4,6 +4,14 @@ html, body, .full {
   color: #444;
 }
 
+body {
+  display: flex;
+  flex-direction: column;
+}
+.content {
+  flex: 1 0 auto;
+}
+
 div.bumper {
   padding: 64px 0;
 }
@@ -12,10 +20,9 @@ div.small-bumper {
   padding: 30px 0;
 }
 
-/* makes button links text light teal too*/
-/*div.content a {
+a {
   color: #1DE9C3;
-}*/
+}
 
 .thin-text a, .side-nav li>a {
 	font-weight: 300;
@@ -34,19 +41,6 @@ nav {
 	box-shadow: inherit;
   background-color: #fff;
 }
-
-/*.fadeOut {
-  position: fixed;
-  height: 105px;
-  right: 0;
-  left: 0;
-  margin-bottom: 0px;
-  z-index: 996;
-  background: -webkit-linear-gradient(
-        rgba(255, 255, 255, 1) 70%,
-        rgba(255, 255, 255, 0) 100%
-    );
-}*/
 
 .fadeOut {
   position: fixed;

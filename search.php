@@ -5,7 +5,7 @@
 
   <!-- Title -->
   <div class="bumper"></div>
-  <div class="container bumper">
+  <div class="container bumper content">
     <div class="row error">
       <div class="col full m10 offset-m1">
         <h2>Search Results</h2>
