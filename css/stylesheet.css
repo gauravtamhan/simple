@@ -87,7 +87,7 @@ nav .button-collapse {
   float: right;
 }
 
-a.button-collapse i {
+a.button-collapse i, a.search-position i {
 	color: #1de9c3;
 }
 
@@ -416,18 +416,11 @@ div.error .error-message {
   z-index: 1;
 }
 
-@media only screen and (min-width: 993px) {
-  .search-position {
-    /*display: none;*/
-  }
-}
-
 .modal {
   color: white;
   background-color: transparent;
   box-shadow: none;
   text-align: center;
-  /*width: 40%;*/
   font-size: 3rem;
 }
 
@@ -444,4 +437,8 @@ div.error .error-message {
 
 ul:not(.browser-default) {
   padding-left: 4px;
+}
+
+.wp-caption {
+  text-align: center;
 }

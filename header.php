@@ -23,7 +23,7 @@
         <li><a class="black-text" href="<?php echo get_bloginfo( 'wpurl' );?>">Home</a></li>
         <?php wp_list_pages('&title_li='); ?>
       </ul>
-      <a href="#search-modal" onclick="document.getElementById('search').focus();" class="black-text search-position"><i class="material-icons">search</i></a>
+      <a href="#search-modal" onclick="getFocus()" class="black-text search-position"><i class="material-icons">search</i></a>
     </div>
   </nav>
   <div class="fadeOut"></div>
@@ -35,6 +35,6 @@
   <!-- search modal -->
   <div id="search-modal" class="modal">
     <div class="modal-content">
-      <input placeholder="Search" id="search" type="text">
+      <?php get_search_form(); ?>
     </div>
   </div>

@@ -65,8 +65,15 @@ jQuery(document).ready(function($) {
       opacity: .9, // Opacity of modal background
       inDuration: 300, // Transition in duration
       outDuration: 200, // Transition out duration
-      startingTop: '4%', // Starting top style attribute
-      endingTop: '30%', // Ending top style attribute
+      startingTop: '20%', // Starting top style attribute
+      endingTop: '20%', // Ending top style attribute
     }
   );
 });
+
+function getFocus() {
+  jQuery('#search').val("");
+  setTimeout(function() {
+    jQuery('#search').focus();
+  }, 300);
+}
