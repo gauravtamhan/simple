@@ -195,7 +195,7 @@ ul.side-nav a.active-side:before {
   color: #42C4A5;
 }
 
-div.links a.btn-flat:hover, p.links i:hover {
+div.links a.btn-flat:hover, p.links i:hover, p.links button.btn-flat:hover {
   outline: 0;
   background-color: #42C4A5;
   color: white;

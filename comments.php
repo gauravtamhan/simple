@@ -41,6 +41,7 @@
           'cancel_reply_link'=>'or cancel reply',
           'cancel_reply_before'=>'<div class="cancel_reply"><span>',
           'cancel_reply_after'=>'</span></div>',
+          'submit_button'=>'<button name="%1$s" type="submit" id="%2$s" class="%3$s">%4$s</button>',
       );
 
       comment_form($comments_args);
