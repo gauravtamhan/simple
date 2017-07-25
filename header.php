@@ -21,6 +21,19 @@
 
       <ul class="right hide-on-med-and-down thin-text full-nav">
         <li><a class="black-text" href="<?php echo get_bloginfo( 'wpurl' );?>">Home</a></li>
+        <li>
+          <a class="dropdown-button" href="#" data-activates="dropdown1">Archives</a>
+          <!-- Dropdown Structure -->
+          <ul id='dropdown1' class='dropdown-content'>
+            <!-- <li><a href="#!">one</a></li>
+            <li><a href="#!">two</a></li>
+            <li class="divider"></li>
+            <li><a href="#!">three</a></li>
+            <li><a href="#!"><i class="material-icons">view_module</i>four</a></li>
+            <li><a href="#!"><i class="material-icons">cloud</i>five</a></li> -->
+            <?php wp_get_archives('type=monthly'); ?>
+          </ul>
+        </li>
         <?php wp_list_pages('&title_li='); ?>
       </ul>
       <a href="#search-modal" onclick="getFocus()" class="black-text search-position"><i class="material-icons">search</i></a>

@@ -436,3 +436,7 @@ ul:not(.browser-default) {
 .wp-caption {
   text-align: center;
 }
+
+.dropdown-content li:hover {
+  background-color: transparent;
+}
