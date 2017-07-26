@@ -86,7 +86,7 @@ a.button-collapse i, a.search-position i {
 }
 
 /* ------ Full Nav Hover Animation ------*/
-nav ul.full-nav a {
+nav ul.full-nav>li>a {
   position: relative;
   color: #000;
   text-decoration: none;
@@ -95,12 +95,12 @@ nav ul.full-nav a {
   margin: 0 10px;
 }
 
-nav ul.full-nav a:hover {
+nav ul.full-nav>li>a:hover {
   color: #000;
   background-color: transparent;
 }
 
-nav ul.full-nav a:before {
+nav ul.full-nav>li>a:before {
   content: "";
   position: absolute;
   width: 100%;
@@ -115,13 +115,13 @@ nav ul.full-nav a:before {
   transition: all 0.2s ease 0s;
 }
 
-nav ul.full-nav a:hover:before {
+nav ul.full-nav>li>a:hover:before {
   visibility: visible;
   -webkit-transform: scaleX(1);
   transform: scaleX(1);
 }
 
-nav ul.full-nav a.active:before {
+nav ul.full-nav>li>a.active:before {
   content: "";
   position: absolute;
   width: 100%;
@@ -438,5 +438,20 @@ ul:not(.browser-default) {
 }
 
 .dropdown-content li:hover {
+  background-color: transparent;
+}
+
+ul.dropdown-content li a {
+  color: #000;
+
+  -webkit-transition: color 500ms ease;
+  -moz-transition: color 500ms ease;
+  -ms-transition: color 500ms ease;
+  -o-transition: color 500ms ease;
+  transition: color 500ms ease;
+}
+
+ul.dropdown-content li a:hover {
+  color: #1de9c3;
   background-color: transparent;
 }
