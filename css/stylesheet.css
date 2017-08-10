@@ -195,7 +195,7 @@ ul.side-nav a.active-side:before {
   color: #42C4A5;
 }
 
-div.links a.btn-flat:hover, p.links i:hover, p.links button.btn-flat:hover {
+div.links a.btn-flat:hover, p.links i:hover, p.links button.btn-flat:hover, div.links button.btn-flat:hover {
   outline: 0;
   background-color: #42C4A5;
   color: white;
@@ -454,4 +454,27 @@ ul.dropdown-content li a {
 ul.dropdown-content li a:hover {
   color: #1de9c3;
   background-color: transparent;
+}
+
+.contact-form-error{
+  padding: 12px 15px;
+  color: white;
+  background-color: rgba(239, 83, 80, 0.9);
+  border-radius: 4px;
+}
+
+.contact-form-success{
+  padding: 12px 15px;
+  color: white;
+  background-color: rgba(67, 160, 71, 0.8);
+  border-radius: 4px;
+}
+
+.contact-form-success i, .contact-form-success span, .contact-form-error i, .contact-form-error span {
+  display: inline-flex;
+  vertical-align: middle;
+}
+
+.contact-form-success span, .contact-form-error span {
+  padding-left: 6px;
 }
