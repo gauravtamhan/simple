@@ -28,6 +28,11 @@ a {
 	font-weight: 300;
 }
 
+.side-nav li>a {
+  font-weight: 400;
+  font-size: 15px;
+}
+
 .side-nav {
 	background-color: #000;
 }
@@ -388,6 +393,11 @@ div.error .error-message {
   font-weight: 300;
   text-transform: uppercase;
   margin: 0.6rem 0;
+  font-size: 2.10rem;
+}
+
+div.error .error-message span.as {
+  font-weight: 400;
 }
 
 .error-message {
@@ -429,8 +439,21 @@ div.error .error-message {
   }
 }
 
-ul:not(.browser-default) {
+@media only screen and (max-width: 740px) {
+  div.bumper {
+    padding: 35px 0;
+  }
+}
+
+@media only screen and (min-width: 420px) and (max-width: 740px) {
+  .fadeOut {
+    background: -webkit-linear-gradient( rgba(255, 255, 255, 1) 20%, rgba(255, 255, 255, 0) 80% );
+  }
+}
+
+ul.hide-on-med-and-down:not(.browser-default) {
   padding-left: 4px;
+  margin-right: 10px;
 }
 
 .wp-caption {
@@ -477,4 +500,38 @@ ul.dropdown-content li a:hover {
 
 .contact-form-success span, .contact-form-error span {
   padding-left: 6px;
+}
+
+.ag {
+  float: right !important;
+}
+
+.dropdown-button i {
+  color: #1DE9C3;
+}
+
+.side-nav .collapsible-body-mod {
+  background-color: #000;
+}
+
+.side-nav .collapsible-body-mod li a {
+  font-weight: 200;
+}
+
+.side-nav .collapsible-header {
+  padding: 0 20px;
+}
+
+h5>span.subtitle {
+  font-size: 1.44rem;
+}
+
+.desc p {
+  font-size: 2rem;
+    font-weight: 200;
+    color: #8b8b8b;
+}
+
+ul.full-nav ul.children, ul.side-nav ul.children {
+  margin-left: 0;
 }

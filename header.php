@@ -18,28 +18,72 @@
     <div class="nav-wrapper white">
       <a href="<?php echo get_bloginfo( 'wpurl' );?>" class="brand-logo black-text"><i class="material-icons">turned_in_not</i></a>
       <a href="#" data-activates="mobile-demo" class="button-collapse black-text"><i class="material-icons">menu</i></a>
-
+      <!-- Top Nav -->
       <ul class="right hide-on-med-and-down thin-text full-nav">
-        <li><a class="black-text" href="<?php echo get_bloginfo( 'wpurl' );?>">Home</a></li>
         <li>
-          <a class="dropdown-button" href="#" data-activates="dropdown1">Archives</a>
+          <a class="dropdown-button" href="#" data-activates="dropdown1">Archives
+            <i class="material-icons ag">arrow_drop_down</i>
+          </a>
           <!-- Dropdown Structure -->
           <ul id='dropdown1' class='dropdown-content'>
-           <!--  <li><a href="#!">June 2017</a></li>
-            <li><a href="#!">July 2017</a></li>
-            <li><a href="#!">August 2017</a></li>
-            <li><a href="#!">September 2017</a></li> -->
           <?php wp_get_archives('type=monthly'); ?>
           </ul>
         </li>
+        <li>
+          <a class="dropdown-button" href="#" data-activates="dropdown2">Categories
+            <i class="material-icons ag">arrow_drop_down</i>
+          </a>
+          <!-- Dropdown Structure -->
+          <ul id='dropdown2' class='dropdown-content'>
+          <?php
+            $args = array(
+                'title_li'=>'',
+              );
+            wp_list_categories($args);
+          ?>
+          </ul>
+        </li>
+        <li><a class="black-text" href="<?php echo get_bloginfo( 'wpurl' );?>">Home</a></li>
         <?php wp_list_pages('&title_li='); ?>
       </ul>
+      <!-- //// END: Top Nav -->
       <a href="#search-modal" onclick="getFocus()" class="black-text search-position"><i class="material-icons">search</i></a>
     </div>
   </nav>
   <div class="fadeOut"></div>
+
+  <!-- Side Nav -->
   <ul class="side-nav thin-text" id="mobile-demo">
     <li><a class="waves-effect waves-teal" href="<?php echo get_bloginfo( 'wpurl' );?>">Home</a></li>
+    <li class="no-padding">
+      <ul class="collapsible collapsible-accordion">
+        <li>
+          <a class="collapsible-header">Archives</a>
+          <div class="collapsible-body collapsible-body-mod">
+            <ul>
+              <?php wp_get_archives('type=monthly'); ?>
+            </ul>
+          </div>
+        </li>
+      </ul>
+    </li>
+    <li class="no-padding">
+      <ul class="collapsible collapsible-accordion">
+        <li>
+          <a class="collapsible-header">Categories</a>
+          <div class="collapsible-body collapsible-body-mod">
+            <ul>
+              <?php
+                $args = array(
+                    'title_li'=>'',
+                  );
+                wp_list_categories($args);
+              ?>
+            </ul>
+          </div>
+        </li>
+      </ul>
+    </li>
     <?php wp_list_pages('&title_li='); ?>
   </ul>
 
