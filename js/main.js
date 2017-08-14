@@ -41,10 +41,10 @@ jQuery(document).ready(function($) {
   .addTo(controller);
 
   $("ul.side-nav a").addClass('waves-effect waves-teal');
-  $('div.content p').addClass('flow-text');
-  $('div.content ul li').addClass('flow-text');
-  $('div.content ol li').addClass('flow-text');
-  $("div.wp-caption p").removeClass('flow-text');
+  $('div.content p').addClass('responsive-text');
+  $('div.content ul li').addClass('responsive-text');
+  $('div.content ol li').addClass('responsive-text');
+  $("div.wp-caption p").removeClass('responsive-text');
   $('img').addClass('responsive-img');
   $('img.avatar').addClass('circle');
 

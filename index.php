@@ -17,7 +17,7 @@
 
   <!-- Blog body -->
   <div id="trigger"></div>
-  <div class="container">
+  <div class="container no-floating-footer">
 
       <!-- blog content -->
       <?php
@@ -34,6 +34,7 @@
       // ) );
       endif;
       ?>
+      <?php wpbeginner_numeric_posts_nav(); ?>
 
   </div>
 

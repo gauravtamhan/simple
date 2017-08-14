@@ -19,7 +19,7 @@
   </div>
 
   <!-- Blog body -->
-  <div class="container">
+  <div class="container no-floating-footer">
     <!-- page content -->
     <?php
     if ( have_posts() ) : while ( have_posts() ) : the_post();
@@ -28,7 +28,7 @@
 
     endwhile; endif;
     ?>
-
+    <?php wpbeginner_numeric_posts_nav(); ?>
   </div>
 
 <!-- Footer -->

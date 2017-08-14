@@ -8,7 +8,7 @@
 
 
   <!-- Blog body -->
-  <div class="container content">
+  <div class="container content no-floating-footer">
 
     <!-- page content -->
     <?php

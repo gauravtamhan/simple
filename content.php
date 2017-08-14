@@ -8,7 +8,6 @@
     <div class="post-meta-data">
       <a href="<?php comments_link(); ?>"><i class="tiny material-icons">chat_bubble</i>
         <?php
-         // printf(_nx('%1$s Comment', '%1$s Comments', get_comments_number(), 'comments title'), number_format_i18n(get_comments_number()));
         comments_number('No Comments', '1 Comment', '% Comments');
         ?>
       </a>

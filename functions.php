@@ -129,13 +129,93 @@ function mytheme_comment($comment, $args, $depth) {
     <?php endif; ?>
 
     <?php
+}
+
+// Reordering comment field to bottom or reply form
+function wp34731_move_comment_field_to_bottom( $fields ) {
+    $comment_field = $fields['comment'];
+    unset( $fields['comment'] );
+    $fields['comment'] = $comment_field;
+
+    return $fields;
+}
+add_filter( 'comment_form_fields', 'wp34731_move_comment_field_to_bottom' );
+
+
+// Adding numbered pagination
+function wpbeginner_numeric_posts_nav() {
+    if( is_singular() )
+        return;
+    global $wp_query;
+
+    /** Stop execution if there's only 1 page */
+    if( $wp_query->max_num_pages <= 1 )
+        return;
+    $paged = get_query_var( 'paged' ) ? absint( get_query_var( 'paged' ) ) : 1;
+    $max   = intval( $wp_query->max_num_pages );
+
+
+    /** Add current page to the array */
+    if ( $paged >= 1 )
+        $links[] = $paged;
+
+
+    /** Add the pages around the current page to the array */
+    if ( $paged >= 3 ) {
+        $links[] = $paged - 1;
+        $links[] = $paged - 2;
     }
 
-    function wp34731_move_comment_field_to_bottom( $fields ) {
-        $comment_field = $fields['comment'];
-        unset( $fields['comment'] );
-        $fields['comment'] = $comment_field;
-
-        return $fields;
+    if ( ( $paged + 2 ) <= $max ) {
+        $links[] = $paged + 2;
+        $links[] = $paged + 1;
     }
-    add_filter( 'comment_form_fields', 'wp34731_move_comment_field_to_bottom' );
+
+    echo '<div class="row"><div class="col s12 m10 offset-m1"><div class="navigation"><ul class="pagination center-align">' . "\n";
+
+
+    /** Previous Post Link */
+    if ( get_previous_posts_link() )
+        printf( '<li class="waves-effect">%s</li>' . "\n", get_previous_posts_link('<i class="material-icons">chevron_left</i>') );
+    else
+        printf('<li class="disabled"><a href="#!"><i class="material-icons">chevron_left</i></a></li>' . "\n");
+
+    /** Link to first page, plus ellipses if necessary */
+    if ( ! in_array( 1, $links ) ) {
+        $class = 1 == $paged ? ' class="active"' : ' class="waves-effect"';
+
+        printf( '<li%s><a href="%s">%s</a></li>' . "\n", $class, esc_url( get_pagenum_link( 1 ) ), '1' );
+
+
+        if ( ! in_array( 2, $links ) )
+            echo '<li>…</li>';
+    }
+
+
+    /** Link to current page, plus 2 pages in either direction if necessary */
+    sort( $links );
+    foreach ( (array) $links as $link ) {
+        $class = $paged == $link ? ' class="active"' : ' class="waves-effect"';
+        printf( '<li%s><a href="%s">%s</a></li>' . "\n", $class, esc_url( get_pagenum_link( $link ) ), $link );
+    }
+
+
+    /** Link to last page, plus ellipses if necessary */
+    if ( ! in_array( $max, $links ) ) {
+        if ( ! in_array( $max - 1, $links ) )
+            echo '<li>…</li>' . "\n";
+
+
+        $class = $paged == $max ? ' class="active"' : ' class="waves-effect"';
+        printf( '<li%s><a href="%s">%s</a></li>' . "\n", $class, esc_url( get_pagenum_link( $max ) ), $max );
+    }
+
+
+    /** Next Post Link */
+    if ( get_next_posts_link() )
+        printf( '<li class="waves-effect">%s</li>' . "\n", get_next_posts_link('<i class="material-icons">chevron_right</i>') );
+    else
+        printf( '<li class="disabled"><a href="#!"><i class="material-icons">chevron_right</i></a></li>' . "\n");
+
+    echo '</ul></div></div></div>' . "\n";
+}

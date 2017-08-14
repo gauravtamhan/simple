@@ -8,7 +8,8 @@ body {
   display: flex;
   flex-direction: column;
 }
-.content {
+
+.no-floating-footer {
   flex: 1 0 auto;
 }
 
@@ -105,7 +106,7 @@ nav ul.full-nav>li>a:hover {
   background-color: transparent;
 }
 
-nav ul.full-nav>li>a:before {
+nav ul.full-nav>li>a:not(.dropdown-button):before {
   content: "";
   position: absolute;
   width: 100%;
@@ -120,7 +121,7 @@ nav ul.full-nav>li>a:before {
   transition: all 0.2s ease 0s;
 }
 
-nav ul.full-nav>li>a:hover:before {
+nav ul.full-nav>li>a:not(.dropdown-button):hover:before {
   visibility: visible;
   -webkit-transform: scaleX(1);
   transform: scaleX(1);
@@ -228,7 +229,7 @@ div.post-meta-data a, div.post-meta-data i {
 div.post-meta-data a:hover {
   color: #444;
   background-color: white;
-  text-decoration: underline;
+  /*text-decoration: underline;*/
 }
 
 form label, .comments label {
@@ -319,7 +320,7 @@ blockquote {
   border-left-width: 3px;
 }
 
-blockquote p.flow-text {
+blockquote p.responsive-text {
   font-weight: 300;
   color: #666;
   font-style: italic;
@@ -331,6 +332,7 @@ div.wp-caption p {
   color: #828282;
   text-transform: uppercase;
   font-weight: 300;
+  font-size: 14px;
 }
 
 div.container div.no-row-spacing {
@@ -379,7 +381,7 @@ ul.children {
   margin-left: 6%;
 }
 
-div.content h4 {
+div.content h4, div.content h1 {
   text-transform: capitalize;
 }
 
@@ -390,7 +392,7 @@ div.error h1 {
 
 div.error .error-message {
   color: #8b8b8b;
-  font-weight: 300;
+  font-weight: 200;
   text-transform: uppercase;
   margin: 0.6rem 0;
   font-size: 2.10rem;
@@ -535,3 +537,98 @@ h5>span.subtitle {
 ul.full-nav ul.children, ul.side-nav ul.children {
   margin-left: 0;
 }
+
+.pagination li.active {
+  background-color: #42C4A5;
+}
+
+/* ---------------------- Responsive Text ---------------------- */
+.responsive-text {
+  font-weight: 300;
+}
+
+@media only screen and (min-width: 360px) {
+  .responsive-text {
+    font-size: 1.2rem;
+  }
+}
+
+@media only screen and (min-width: 390px) {
+  .responsive-text {
+    font-size: 1.224rem;
+  }
+}
+
+@media only screen and (min-width: 420px) {
+  .responsive-text {
+    font-size: 1.248rem;
+  }
+}
+
+@media only screen and (min-width: 450px) {
+  .responsive-text {
+    font-size: 1.272rem;
+  }
+}
+
+@media only screen and (min-width: 480px) {
+  .responsive-text {
+    font-size: 1.296rem;
+  }
+}
+
+@media only screen and (min-width: 510px) {
+  .responsive-text {
+    font-size: 1.32rem;
+  }
+}
+
+@media only screen and (min-width: 540px) {
+  .responsive-text {
+    font-size: 1.344rem;
+  }
+}
+
+@media only screen and (min-width: 570px) {
+  .responsive-text {
+    font-size: 1.368rem;
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  .responsive-text {
+    font-size: 1.392rem;
+  }
+}
+
+@media only screen and (min-width: 630px) {
+  .responsive-text {
+    font-size: 1.416rem;
+  }
+}
+
+@media only screen and (min-width: 660px) {
+  .responsive-text {
+    font-size: 1.44rem;
+  }
+}
+
+@media only screen and (min-width: 690px) {
+  .responsive-text {
+    font-size: 1.464rem;
+  }
+}
+
+@media only screen and (min-width: 720px) {
+  .responsive-text {
+    font-size: 1.488rem;
+  }
+}
+
+@media only screen and (max-width: 360px) {
+  .responsive-text {
+    font-size: 1.2rem;
+  }
+}
+
+/* ---------------------- END: Responsive Text ---------------------- */

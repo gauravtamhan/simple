@@ -18,7 +18,7 @@
   </div>
 
   <!-- Blog body -->
-  <div class="container">
+  <div class="container content no-floating-footer">
     <div class="row">
       <div class="col m10 offset-m1 links content">
       <p class="flow-text error-message">Looks like the page you are looking for doesn't exist.

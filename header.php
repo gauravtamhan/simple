@@ -26,7 +26,13 @@
           </a>
           <!-- Dropdown Structure -->
           <ul id='dropdown1' class='dropdown-content'>
-          <?php wp_get_archives('type=monthly'); ?>
+          <?php
+            $args = array(
+                'type'=>'monthly',
+                'order'=>'ASC',
+              );
+            wp_get_archives($args);
+          ?>
           </ul>
         </li>
         <li>
@@ -61,7 +67,13 @@
           <a class="collapsible-header">Archives</a>
           <div class="collapsible-body collapsible-body-mod">
             <ul>
-              <?php wp_get_archives('type=monthly'); ?>
+              <?php
+                $args = array(
+                    'type'=>'monthly',
+                    'order'=>'ASC',
+                  );
+                wp_get_archives($args);
+              ?>
             </ul>
           </div>
         </li>
