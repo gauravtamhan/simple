@@ -52,8 +52,16 @@ Template Name: Contact
       else //ready to go!
       {
         $sent = wp_mail($to, $subject, stripslashes(strip_tags($message)), $headers);
-        if($sent) my_contact_form_generate_response("success", $message_sent); //message sent!
-        else my_contact_form_generate_response("error", $message_unsent); //message wasn't sent
+        if($sent)
+        {
+          my_contact_form_generate_response("success", $message_sent); //message sent!
+          $_POST = array();
+
+        }
+        else
+        {
+          my_contact_form_generate_response("error", $message_unsent); //message wasn't sent
+        }
       }
     }
   }
@@ -78,7 +86,7 @@ Template Name: Contact
   </div>
 
   <!-- Blog body -->
-  <div class="container content">
+  <div class="container no-floating-footer">
 
     <!-- page content -->
     <?php

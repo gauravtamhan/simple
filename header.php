@@ -16,7 +16,16 @@
   <!-- Nav Bar -->
   <nav class="nav-fixed">
     <div class="nav-wrapper white">
-      <a href="<?php echo get_bloginfo( 'wpurl' );?>" class="brand-logo black-text"><i class="material-icons">turned_in_not</i></a>
+      <?php
+        $custom_logo_id = get_theme_mod( 'custom_logo' );
+        $logo = wp_get_attachment_image_src( $custom_logo_id , 'full' );
+        if ( has_custom_logo() ) {
+                echo '<a href="'. get_bloginfo( 'wpurl' ) .'"><img src="'. esc_url( $logo[0] ) .'" class="brand-logo custom-logo"></a>';
+        } else {
+                echo '<a href="'. get_bloginfo( 'wpurl' ) .'" class="brand-logo black-text"><i class="material-icons">turned_in_not</i></a>';
+        }
+      ?>
+
       <a href="#" data-activates="mobile-demo" class="button-collapse black-text"><i class="material-icons">menu</i></a>
       <!-- Top Nav -->
       <ul class="right hide-on-med-and-down thin-text full-nav">
@@ -53,7 +62,7 @@
         <?php wp_list_pages('&title_li='); ?>
       </ul>
       <!-- //// END: Top Nav -->
-      <a href="#search-modal" onclick="getFocus()" class="black-text search-position"><i class="material-icons">search</i></a>
+      <a href="#search-modal" onclick="getFocus()" class="black-text search-position modal-trigger"><i class="material-icons">search</i></a>
     </div>
   </nav>
   <div class="fadeOut"></div>

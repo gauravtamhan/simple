@@ -45,7 +45,7 @@ jQuery(document).ready(function($) {
   $('div.content ul li').addClass('responsive-text');
   $('div.content ol li').addClass('responsive-text');
   $("div.wp-caption p").removeClass('responsive-text');
-  $('img').addClass('responsive-img');
+  $('img:not(.nav-fixed img)').addClass('responsive-img');
   $('img.avatar').addClass('circle');
 
   // Put "Leave a Reply" section into row-col divs

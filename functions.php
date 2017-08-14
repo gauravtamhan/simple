@@ -1,17 +1,36 @@
 <?php
 
 // Add scripts and stylesheets
-function simple_scripts() {
-  wp_enqueue_style('materialize_css', 'https://cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/css/materialize.min.css');
-  wp_enqueue_script('materialize_js', 'https://cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/js/materialize.min.js', array('jquery'));
-  wp_enqueue_style('stylesheet', get_template_directory_uri() . '/css/stylesheet.css');
-  wp_enqueue_script('main', get_template_directory_uri() . '/js/main.js', array('jquery'));
+function minimal_scripts() {
+    // wp_enqueue_style('materialize_css', 'https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.1/css/materialize.min.css');
+    wp_enqueue_style('materialize_css', get_template_directory_uri() . '/css/materialize.min.css');
+    // wp_enqueue_script('materialize_js', 'https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.1/js/materialize.min.js', array('jquery'));
+    wp_enqueue_script('materialize_js', get_template_directory_uri() . '/js/materialize.min.js', array('jquery'));
+    wp_enqueue_style('stylesheet', get_template_directory_uri() . '/css/stylesheet.css');
+    wp_enqueue_script('main', get_template_directory_uri() . '/js/main.js', array('jquery'));
 }
 
-add_action( 'wp_enqueue_scripts', 'simple_scripts' );
+add_action( 'wp_enqueue_scripts', 'minimal_scripts' );
 
 // WordPress Titles
 add_theme_support( 'title-tag' );
+
+
+// Adding thumbnail support
+add_theme_support( 'post-thumbnails' );
+
+
+// Adding custom logo support
+function minimal_custom_logo_setup() {
+    $defaults = array(
+        'height'      => 24,
+        'width'       => 24,
+    );
+    add_theme_support( 'custom-logo', $defaults );
+}
+add_action( 'after_setup_theme', 'minimal_custom_logo_setup' );
+
+
 
 
 // Changing excerpt more - only works where excerpt is NOT hand-crafted
@@ -51,33 +70,7 @@ function fixed_img_caption_shortcode($attr, $content = null) {
 }
 
 
-// function improved_trim_excerpt($text) {
-//         global $post;
-//         if ( '' == $text ) {
-//                 $text = get_the_content('');
-//                 $text = apply_filters('the_content', $text);
-//                 $text = str_replace('\]\]\>', ']]&gt;', $text);
-                // $text = preg_replace('@<script[^>]*.*?</script>@si', '', $text);
-//                 $text = strip_tags($text, '<img>');
-//                 $excerpt_length = 80;
-//                 $words = explode(' ', $text, $excerpt_length + 1);
-//                 if (count($words)> $excerpt_length) {
-//                         array_pop($words);
-//                         array_push($words, '[...]');
-//                         $text = implode(' ', $words);
-//                 }
-//         }
-//         return $text;
-// }
-// remove_filter('get_the_excerpt', 'wp_trim_excerpt');
-// add_filter('get_the_excerpt', 'improved_trim_excerpt');
-
-// function image_tag_class($class) {
-//     $class = ' responsive-img';
-//     return $class;
-// }
-// add_filter('get_image_tag_class', 'image_tag_class' );
-
+// Custom leave a comment section
 function mytheme_comment($comment, $args, $depth) {
     if ( 'div' === $args['style'] ) {
         $tag       = 'div';
@@ -219,3 +212,51 @@ function wpbeginner_numeric_posts_nav() {
 
     echo '</ul></div></div></div>' . "\n";
 }
+
+
+// Customizing Password Protected Post output
+function my_password_form() {
+    global $post;
+    $label = 'pwbox-'.( empty( $post->ID ) ? rand() : $post->ID );
+    $o = '<p>This post is password protected. To view it please enter your password below.</p>'
+        . '<div class="small-bumper"></div>'
+        . '<form action="' . esc_url( site_url( 'wp-login.php?action=postpass', 'login_post' ) ) . '" method="post">'
+        . '<div class="row">'
+        . '<div class="input-field col s12 m6">'
+        . '<input name="post_password" id="' . $label . '" type="password" size="20" maxlength="20" />'
+        . '<label for="' . $label . '">' . __( "Password" ) . ' </label>'
+        . '</div>'
+        . '</div>'
+        . '<div class="row">'
+        . '<div class="col s12">'
+        . '<button class="waves-effect waves-teal btn-flat" type="submit" name="Submit">Submit</button>'
+        . '</div>'
+        . '</div>'
+        . '</form>'
+    ;
+    return $o;
+}
+add_filter( 'the_password_form', 'my_password_form' );
+
+
+// Adding the lock icon to protected posts
+function change_protected_title_prefix() {
+    return '%s <i class="material-icons protect">lock</i>';
+}
+add_filter('protected_title_format', 'change_protected_title_prefix');
+
+
+// Customizing the excerpt text of protected posts
+function my_excerpt_protected( $excerpt ) {
+    if ( post_password_required() )
+        $excerpt = '<p>This post is password protected.</p>';
+    return $excerpt;
+}
+add_filter( 'the_excerpt', 'my_excerpt_protected' );
+
+
+// Adding icon to title of private posts
+function change_private_title_prefix() {
+    return '%s <i class="material-icons private">verified_user</i>';
+}
+add_filter('private_title_format', 'change_private_title_prefix');

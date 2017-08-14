@@ -5,7 +5,7 @@
 
   <!-- Title -->
   <div class="bumper"></div>
-  <div class="container bumper">
+  <div class="container bumper protection">
     <div class="row">
       <div class="col full m10 offset-m1">
         <div style="margin: 0 auto;">

@@ -542,6 +542,23 @@ ul.full-nav ul.children, ul.side-nav ul.children {
   background-color: #42C4A5;
 }
 
+h4>i.protect, h1>i.protect, h2>i.protect {
+  color: slategrey;
+}
+
+h4>i.private, h1>i.private, h2>i.private {
+  color: #42C4A5;
+}
+
+.protection h1>i.material-icons, .protection h2>i.material-icons {
+  font-size: 2.9rem;
+}
+
+.custom-logo {
+  margin-top: 20px;
+  margin-left: 2px;
+}
+
 /* ---------------------- Responsive Text ---------------------- */
 .responsive-text {
   font-weight: 300;
