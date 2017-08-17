@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html <?php language_attributes(); ?>>
 <head>
   <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0"/>
 
@@ -7,7 +7,7 @@
 
   <?php wp_head(); ?>
 </head>
-<body>
+<body <?php body_class(); ?>>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.14.2/TweenMax.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/ScrollMagic.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/debug.addIndicators.min.js"></script>
@@ -20,9 +20,9 @@
         $custom_logo_id = get_theme_mod( 'custom_logo' );
         $logo = wp_get_attachment_image_src( $custom_logo_id , 'full' );
         if ( has_custom_logo() ) {
-                echo '<a href="'. get_bloginfo( 'wpurl' ) .'"><img src="'. esc_url( $logo[0] ) .'" class="brand-logo custom-logo"></a>';
+                echo '<a href="'. esc_url( site_url() ) .'"><img src="'. esc_url( $logo[0] ) .'" class="brand-logo custom-logo"></a>';
         } else {
-                echo '<a href="'. get_bloginfo( 'wpurl' ) .'" class="brand-logo black-text"><i class="material-icons">turned_in_not</i></a>';
+                echo '<a href="'. esc_url( site_url() ) .'" class="brand-logo black-text"><i class="material-icons">turned_in_not</i></a>';
         }
       ?>
 
@@ -58,7 +58,7 @@
           ?>
           </ul>
         </li>
-        <li><a class="black-text" href="<?php echo get_bloginfo( 'wpurl' );?>">Home</a></li>
+        <li><a class="black-text" href="<?php echo esc_url( site_url() );?>">Home</a></li>
         <?php wp_list_pages('&title_li='); ?>
       </ul>
       <!-- //// END: Top Nav -->
@@ -69,7 +69,7 @@
 
   <!-- Side Nav -->
   <ul class="side-nav thin-text" id="mobile-demo">
-    <li><a class="waves-effect waves-teal" href="<?php echo get_bloginfo( 'wpurl' );?>">Home</a></li>
+    <li><a class="waves-effect waves-teal" href="<?php echo esc_url( site_url() );?>">Home</a></li>
     <li class="no-padding">
       <ul class="collapsible collapsible-accordion">
         <li>

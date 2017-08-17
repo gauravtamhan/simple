@@ -20,6 +20,10 @@ add_theme_support( 'title-tag' );
 add_theme_support( 'post-thumbnails' );
 
 
+// Adding feed links support
+add_theme_support( 'automatic-feed-links' );
+
+
 // Adding custom logo support
 function minimal_custom_logo_setup() {
     $defaults = array(
@@ -181,7 +185,7 @@ function wpbeginner_numeric_posts_nav() {
 
 
         if ( ! in_array( 2, $links ) )
-            echo '<li>…</li>';
+            echo '<li>...</li>';
     }
 
 
@@ -196,7 +200,7 @@ function wpbeginner_numeric_posts_nav() {
     /** Link to last page, plus ellipses if necessary */
     if ( ! in_array( $max, $links ) ) {
         if ( ! in_array( $max - 1, $links ) )
-            echo '<li>…</li>' . "\n";
+            echo '<li>...</li>' . "\n";
 
 
         $class = $paged == $max ? ' class="active"' : ' class="waves-effect"';
