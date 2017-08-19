@@ -3,6 +3,8 @@
 <!-- Header with nav -->
 <?php get_header(); ?>
 
+
+<?php if ( !is_paged() ) : ?>
   <!-- Title -->
   <div class="container full bumper">
     <div class="row full">
@@ -14,9 +16,14 @@
       </div>
     </div>
   </div>
+  <div id="trigger"></div>
+
+<?php else : ?>
+  <div class="bumper"></div>
+
+<?php endif; ?>
 
   <!-- Blog body -->
-  <div id="trigger"></div>
   <div class="container no-floating-footer">
 
       <!-- blog content -->

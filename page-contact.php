@@ -14,9 +14,16 @@ Template Name: Contact
 
     global $response;
 
-    if ($type == "success") $response = "<div class='row'><div class='col m10 offset-m1'><div class='contact-form-success'><i class='material-icons'>check_circle</i><span>{$message}</span></div></div></div>";
-    else $response = "<div class='row'><div class='col m10 offset-m1'><div class='contact-form-error'><i class='material-icons'>warning</i><span>{$message}</span></div></div></div>";
+    if ($type == "success") $response = "<div class='row'><div class='col s12 m10 offset-m1'><div class='contact-form-success'><i class='material-icons'>check_circle</i><span>{$message}</span></div></div></div>";
+    else $response = "<div class='row'><div class='col s12 m10 offset-m1'><div class='contact-form-error'><i class='material-icons'>warning</i><span>{$message}</span></div></div></div>";
 
+  }
+
+  function do_unset() {
+    $_POST["message_fname"] = "";
+    $_POST["message_lname"] = "";
+    $_POST["message_email"] = "";
+    $_POST["message_text"] = "";
   }
 
   //response messages
@@ -26,10 +33,11 @@ Template Name: Contact
   $message_sent    = "Your message has been sent.";
 
   //user posted variables
-  $fname = $_POST['message_fname'];
-  $lname = $_POST['message_lname'];
-  $email = $_POST['message_email'];
-  $message = $_POST['message_text'];
+  $fname = (isset($_POST["message_fname"])) ? $_POST['message_fname'] : "";
+  $lname = (isset($_POST["message_lname"])) ? $_POST['message_lname'] : "";
+  $email = (isset($_POST["message_email"])) ? $_POST['message_email'] : "";
+  $message = (isset($_POST["message_text"])) ? $_POST['message_text'] : "";
+
 
   //php mailer variables
   $to = get_option('admin_email');
@@ -55,8 +63,8 @@ Template Name: Contact
         if($sent)
         {
           my_contact_form_generate_response("success", $message_sent); //message sent!
-          $_POST = array();
-
+          // $_POST = array();
+          do_unset();
         }
         else
         {
@@ -65,7 +73,7 @@ Template Name: Contact
       }
     }
   }
-  elseif($_POST['submitted']) my_contact_form_generate_response("error", $missing_content);
+  elseif(isset($_POST["submitted"])) my_contact_form_generate_response("error", $missing_content);
 
 ?>
 

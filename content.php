@@ -9,7 +9,7 @@
       <?php endif;
       the_excerpt();
       ?>
-    <a href="<?php the_permalink(); ?>" class="waves-effect waves-teal btn-flat">Read More</a>
+    <a href="<?php the_permalink(); ?>" class="waves-effect waves-teal btn-flat"><?php _e('Read More', 'minimal'); ?></a>
     <div class="post-meta-data">
       <a href="<?php comments_link(); ?>"><i class="tiny material-icons">chat_bubble</i>
         <?php

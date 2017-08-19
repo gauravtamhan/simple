@@ -3,7 +3,7 @@
     <div class="container">
       <div class="row">
         <div class="col m10 offset-m1">
-          <p>Made with <b>MaterializeCSS</b> | Powered by <b>Wordpress</b></p>
+          <p>Made with <b>Materialize</b> | Powered by <b>Wordpress</b></p>
         </div>
       </div>
     </div>

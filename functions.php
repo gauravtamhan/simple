@@ -2,15 +2,24 @@
 
 // Add scripts and stylesheets
 function minimal_scripts() {
-    // wp_enqueue_style('materialize_css', 'https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.1/css/materialize.min.css');
-    wp_enqueue_style('materialize_css', get_template_directory_uri() . '/css/materialize.min.css');
-    // wp_enqueue_script('materialize_js', 'https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.1/js/materialize.min.js', array('jquery'));
-    wp_enqueue_script('materialize_js', get_template_directory_uri() . '/js/materialize.min.js', array('jquery'));
+    wp_enqueue_style('materialize_css', get_template_directory_uri() . '/css/materialize.css');
+    wp_enqueue_script('materialize_js', get_template_directory_uri() . '/js/materialize.js', array('jquery'));
+
+    wp_enqueue_style('semantic_css', get_template_directory_uri() . '/css/semantic.css');
+    wp_enqueue_script('semantic_js', get_template_directory_uri() . '/js/semantic.js', array('jquery'));
+
+    wp_enqueue_script('tweenmax_js', get_template_directory_uri() . '/js/TweenMax.min.js');
+    wp_enqueue_script('scrollmagic_js', get_template_directory_uri() . '/js/ScrollMagic.js');
+    wp_enqueue_script('animation_js', get_template_directory_uri() . '/js/animation.gsap.js');
+
     wp_enqueue_style('stylesheet', get_template_directory_uri() . '/css/stylesheet.css');
     wp_enqueue_script('main', get_template_directory_uri() . '/js/main.js', array('jquery'));
 }
 
 add_action( 'wp_enqueue_scripts', 'minimal_scripts' );
+
+// Make theme available for translation
+load_theme_textdomain( 'minimal' );
 
 // WordPress Titles
 add_theme_support( 'title-tag' );
@@ -18,6 +27,16 @@ add_theme_support( 'title-tag' );
 
 // Adding thumbnail support
 add_theme_support( 'post-thumbnails' );
+
+
+
+if ( ! isset( $content_width ) ) {
+    $content_width = 800;
+}
+
+
+// Adding editor style
+// add_editor_style();
 
 
 // Adding feed links support
@@ -94,13 +113,13 @@ function mytheme_comment($comment, $args, $depth) {
                 <?php if ( $args['avatar_size'] != 0 ) echo get_avatar( $comment, $args['avatar_size'] ); ?>
             </div>
             <div class="col s10">
-                <?php printf( __( '<p class="name">%s</p>'), get_comment_author_link() ); ?>
+                <?php printf( __( '<p class="name">%s</p>', 'minimal'), get_comment_author_link() ); ?>
                 <?php
                     /* translators: 1: date, 2: time */
-                    printf( __('<p class="date">%1$s at %2$s</p>'), get_comment_date(),  get_comment_time() );
+                    printf( __('<p class="date">%1$s at %2$s</p>', 'minimal'), get_comment_date(),  get_comment_time() );
                 ?>
                 <?php if ( $comment->comment_approved == '0' ) : ?>
-                     <p class="comment-awaiting-moderation"><?php _e( 'Your comment is awaiting moderation.' ); ?></p>
+                     <p class="comment-awaiting-moderation"><?php _e( 'Your comment is awaiting moderation.', 'minimal' ); ?></p>
                 <?php endif; ?>
             </div>
         </div>
@@ -222,13 +241,13 @@ function wpbeginner_numeric_posts_nav() {
 function my_password_form() {
     global $post;
     $label = 'pwbox-'.( empty( $post->ID ) ? rand() : $post->ID );
-    $o = '<p>This post is password protected. To view it please enter your password below.</p>'
+    $o = '<p>' . __( 'This post is password protected. To view it please enter your password below.', 'minimal' ) . '</p>'
         . '<div class="small-bumper"></div>'
         . '<form action="' . esc_url( site_url( 'wp-login.php?action=postpass', 'login_post' ) ) . '" method="post">'
         . '<div class="row">'
         . '<div class="input-field col s12 m6">'
         . '<input name="post_password" id="' . $label . '" type="password" size="20" maxlength="20" />'
-        . '<label for="' . $label . '">' . __( "Password" ) . ' </label>'
+        . '<label for="' . $label . '">' . __( "Password", 'minimal' ) . ' </label>'
         . '</div>'
         . '</div>'
         . '<div class="row">'

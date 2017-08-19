@@ -12,7 +12,7 @@
         <?php if ( have_posts() ) : ?>
           <h4 class="error-message">Here's <?php printf( __( 'what we found for "%s"'), '<span>' . get_search_query() . '</span>' ); ?>.</h4>
         <?php else : ?>
-          <h4 class="error-message">No results found! Try another search.</h4>
+          <h4 class="error-message"><?php _e('No results found! Try another search.', 'minimal'); ?></h4>
         <?php endif; ?>
       </div>
     </div>

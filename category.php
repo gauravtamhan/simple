@@ -7,7 +7,6 @@
     <div class="row error">
       <div class="col full m10 offset-m1">
         <div class="desc" style="margin: 0 auto;">
-          <!-- <h2>Categories</h2> -->
           <h2><?php single_cat_title(); ?></h2>
           <?php echo category_description(); ?>
         </div>

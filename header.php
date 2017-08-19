@@ -8,11 +8,6 @@
   <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.14.2/TweenMax.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/ScrollMagic.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/debug.addIndicators.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/animation.gsap.js"></script>
-
   <!-- Nav Bar -->
   <nav class="nav-fixed">
     <div class="nav-wrapper white">
@@ -30,7 +25,7 @@
       <!-- Top Nav -->
       <ul class="right hide-on-med-and-down thin-text full-nav">
         <li>
-          <a class="dropdown-button" href="#" data-activates="dropdown1">Archives
+          <a class="dropdown-button" href="#" data-activates="dropdown1"><?php _e('Archives', 'minimal'); ?>
             <i class="material-icons ag">arrow_drop_down</i>
           </a>
           <!-- Dropdown Structure -->
@@ -45,7 +40,7 @@
           </ul>
         </li>
         <li>
-          <a class="dropdown-button" href="#" data-activates="dropdown2">Categories
+          <a class="dropdown-button" href="#" data-activates="dropdown2"><?php _e('Categories', 'minimal'); ?>
             <i class="material-icons ag">arrow_drop_down</i>
           </a>
           <!-- Dropdown Structure -->
@@ -58,22 +53,22 @@
           ?>
           </ul>
         </li>
-        <li><a class="black-text" href="<?php echo esc_url( site_url() );?>">Home</a></li>
+        <li><a class="black-text" href="<?php echo esc_url( site_url() );?>"><?php _e('Home', 'minimal'); ?></a></li>
         <?php wp_list_pages('&title_li='); ?>
       </ul>
       <!-- //// END: Top Nav -->
-      <a href="#search-modal" onclick="getFocus()" class="black-text search-position modal-trigger"><i class="material-icons">search</i></a>
+      <a href="javascript:openModal();" class="black-text search-position"><i class="material-icons">search</i></a>
     </div>
   </nav>
   <div class="fadeOut"></div>
 
   <!-- Side Nav -->
   <ul class="side-nav thin-text" id="mobile-demo">
-    <li><a class="waves-effect waves-teal" href="<?php echo esc_url( site_url() );?>">Home</a></li>
+    <li><a class="waves-effect waves-teal" href="<?php echo esc_url( site_url() );?>"><?php _e('Home', 'minimal'); ?></a></li>
     <li class="no-padding">
       <ul class="collapsible collapsible-accordion">
         <li>
-          <a class="collapsible-header">Archives</a>
+          <a class="collapsible-header"><?php _e('Archives', 'minimal'); ?></a>
           <div class="collapsible-body collapsible-body-mod">
             <ul>
               <?php
@@ -91,7 +86,7 @@
     <li class="no-padding">
       <ul class="collapsible collapsible-accordion">
         <li>
-          <a class="collapsible-header">Categories</a>
+          <a class="collapsible-header"><?php _e('Categories', 'minimal'); ?></a>
           <div class="collapsible-body collapsible-body-mod">
             <ul>
               <?php
@@ -109,8 +104,12 @@
   </ul>
 
   <!-- search modal -->
-  <div id="search-modal" class="modal">
-    <div class="modal-content">
+  <div class="ui tiny modal">
+    <div class="ui icon header">
+      <i class="material-icons large icon">search</i>
+      <?php _e('Type a few words and hit Enter to search!', 'minimal'); ?>
+    </div>
+    <div class="content">
       <?php get_search_form(); ?>
     </div>
   </div>
