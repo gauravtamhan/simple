@@ -84,6 +84,13 @@ jQuery(document).ready(function($) {
   $('form p.form-submit #submit').addClass('waves-effect waves-teal btn-flat');
   // $('#comment-pagination a').addClass('center-align');
 
+  $('a#category').click(function(e){
+    e.preventDefault();
+  });
+  $('a#archive').click(function(e){
+    e.preventDefault();
+  });
+
 });
 
 

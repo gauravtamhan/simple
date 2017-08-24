@@ -15,6 +15,12 @@
     if ( have_posts() ) : while ( have_posts() ) : the_post();
 
       get_template_part( 'content-single', get_post_format() ); ?>
+
+    <div class="row">
+      <div class="col s12 m10 offset-m1">
+        <?php the_tags( '<div class="line-break for-tag-top"></div> <table><tr><td width="13%"><div><i class="tag material-icons">local_offer</i><h5 class="tag-title">Tags:</h5></div></td> <td><div class="chip-holder"><div class="chip">', '</div><div class="chip">', '</div></div></td></tr></table> <div class="line-break for-tag-bottom"></div>' ); ?>
+      </div>
+    </div>
   </div>
   <div class="small-bumper"></div>
   <div class='container comments'>

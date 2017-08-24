@@ -199,6 +199,16 @@ ul.side-nav a.active-side:before {
   background-color: #e0e0e0
 }
 
+.for-tag-top {
+  margin-top: 20px;
+  margin-bottom: 22px
+}
+
+.for-tag-bottom {
+  margin-top: 18px;
+  margin-bottom: 0px
+}
+
 .btn-flat {
   border: 1px solid #42C4A5;
   border-radius: 25px;
@@ -534,6 +544,7 @@ ul.dropdown-content li a:hover {
 
 .side-nav .collapsible-body-mod li a {
   font-weight: 200;
+  /*-webkit-font-smoothing: none;*/
 }
 
 .side-nav .collapsible-header {
@@ -563,7 +574,7 @@ h4>i.protect, h1>i.protect, h2>i.protect {
 }
 
 h4>i.private, h1>i.private, h2>i.private {
-  color: #42C4A5;
+  color: #6060d8;
 }
 
 .protection h1>i.material-icons, .protection h2>i.material-icons {
@@ -583,6 +594,44 @@ h4>i.private, h1>i.private, h2>i.private {
   background: transparent;
   border-bottom: none;
   color: white;
+}
+
+td .tag {
+  display: inline;
+  font-size: 1.35rem;
+  vertical-align: middle;
+  padding-right: 4px;
+}
+
+.chip a {
+  color: rgba(0, 0, 0, 0.6);
+  padding: 10px 12px;
+}
+
+.chip-holder .chip {
+  -webkit-transition: background-color 500ms ease;
+  -moz-transition: background-color 500ms ease;
+  -ms-transition: background-color 500ms ease;
+  -o-transition: background-color 500ms ease;
+  transition: background-color 500ms ease;
+  padding: initial;
+}
+
+.chip-holder .chip:hover {
+  background-color: #cccccc;
+}
+
+.tag-title {
+  display: inline-block;
+  font-size: 1.35rem;
+  vertical-align: middle;
+  font-weight: 300;
+  margin-right: 5px;
+  margin-top: 6px;
+}
+
+td {
+  vertical-align: top;
 }
 
 .custom-logo {

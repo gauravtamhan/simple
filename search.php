@@ -10,7 +10,7 @@
       <div class="col full m10 offset-m1">
         <h2>Search Results</h2>
         <?php if ( have_posts() ) : ?>
-          <h4 class="error-message">Here's <?php printf( __( 'what we found for "%s"'), '<span>' . get_search_query() . '</span>' ); ?>.</h4>
+          <h4 class="error-message"><?php printf( __( 'Here\'s what we found for "%s"', 'minimal'), '<span>' . get_search_query() . '</span>' ); ?>.</h4>
         <?php else : ?>
           <h4 class="error-message"><?php _e('No results found! Try another search.', 'minimal'); ?></h4>
         <?php endif; ?>

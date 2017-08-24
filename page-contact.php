@@ -27,10 +27,10 @@ Template Name: Contact
   }
 
   //response messages
-  $missing_content = "Please supply all information.";
-  $email_invalid   = "Please provide a valid email address.";
-  $message_unsent  = "Message was not sent. Try Again.";
-  $message_sent    = "Your message has been sent.";
+  $missing_content = __("Please supply all information.", 'minimal');
+  $email_invalid   = __("Please provide a valid email address.", 'minimal');
+  $message_unsent  = __("Message was not sent. Try Again.", 'minimal');
+  $message_sent    = __("Your message has been sent.", 'minimal');
 
   //user posted variables
   $fname = (isset($_POST["message_fname"])) ? $_POST['message_fname'] : "";
@@ -112,29 +112,29 @@ Template Name: Contact
         <div class="row">
           <div class="input-field col s12 m12 l6">
             <input id="first_name" type="text" name="message_fname" value="<?php echo esc_attr($_POST['message_fname']); ?>">
-            <label for="first_name">First Name</label>
+            <label for="first_name"><?php _e("First Name", "minimal"); ?></label>
           </div>
           <div class="input-field col s12 m12 l6">
             <input id="last_name" type="text" name="message_lname" value="<?php echo esc_attr($_POST['message_lname']); ?>">
-            <label for="last_name">Last Name</label>
+            <label for="last_name"><?php _e("Last Name", "minimal"); ?></label>
           </div>
         </div>
         <div class="row">
           <div class="input-field col s12">
             <input id="email" type="text" name="message_email" value="<?php echo esc_attr($_POST['message_email']); ?>">
-            <label for="email">Email</label>
+            <label for="email"><?php _e("Email", "minimal"); ?></label>
           </div>
         </div>
         <div class="row">
           <div class="input-field col s12">
             <textarea id="textarea1" class="materialize-textarea" name="message_text"><?php echo esc_textarea($_POST['message_text']); ?></textarea>
-            <label for="textarea1">Message</label>
+            <label for="textarea1"><?php _e("Message", "minimal"); ?></label>
           </div>
         </div>
         <div class="row links">
           <div class="col s12">
             <input type="hidden" name="submitted" value="1">
-            <button class="waves-effect waves-teal btn-flat" type="submit" name="submit">Submit</button>
+            <button class="waves-effect waves-teal btn-flat" type="submit" name="submit"><?php _e("Submit", "minimal"); ?></button>
           </div>
         </div>
       </form>

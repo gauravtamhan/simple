@@ -25,7 +25,7 @@
           'comment_notes_before' => '<p class="comment-notes">' .
             __( 'Your email address will not be published.', 'minimal' ) . '</p>',
           // change the title of send button
-          'label_submit'=>'Post',
+          'label_submit'=>__('Post', 'minimal'),
           // change the html of the title of the reply section
           'title_reply_before'=>'<h5 id="reply-title" class="comment-reply-title">',
           // change the html of the title of the reply section
@@ -38,7 +38,7 @@
           'comment_field' => '<p class="comment-form-comment"><div class="row"><div class="input-field col s12 m7"><textarea id="comment" class="materialize-textarea" name="comment"></textarea><label for="comment">'
           . _x( 'Message', 'noun', 'minimal' ) . '</label></div></div></p>',
           // cancel reply
-          'cancel_reply_link'=>'or cancel reply',
+          'cancel_reply_link'=>__('or cancel reply', 'minimal'),
           'cancel_reply_before'=>'<div class="cancel_reply"><span>',
           'cancel_reply_after'=>'</span></div>',
           'submit_button'=>'<button name="%1$s" type="submit" id="%2$s" class="%3$s">%4$s</button>',
@@ -58,7 +58,7 @@
       <div class="small-bumper"></div>
       <div class="row">
         <div class="col s12 m10 offset-m1">
-          <h5>Discussion</h5>
+          <h5><?php _e("Discussion", "minimal"); ?></h5>
         </div>
       </div>
       <div class="row">

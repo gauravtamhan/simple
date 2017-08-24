@@ -8,7 +8,7 @@
       <div class="col full m10 offset-m1">
         <div style="margin: 0 auto;">
           <h2><?php _e('Archives', 'minimal'); ?></h2>
-          <h4 class="error-message"><?php echo __("Viewing posts from", "minimal") . ' '; ?><span class="as"><?php echo str_replace('Month: ','',get_the_archive_title()); ?></span></h4>
+          <h4 class="error-message"><?php echo __("Viewing posts tagged", "minimal") . ' '; ?><span class="as"><?php single_tag_title(); ?></span></h4>
         </div>
       </div>
     </div>

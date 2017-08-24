@@ -252,7 +252,7 @@ function my_password_form() {
         . '</div>'
         . '<div class="row">'
         . '<div class="col s12">'
-        . '<button class="waves-effect waves-teal btn-flat" type="submit" name="Submit">Submit</button>'
+        . '<button class="waves-effect waves-teal btn-flat" type="submit" name="Submit">' . __("Submit", 'minimal') . '</button>'
         . '</div>'
         . '</div>'
         . '</form>'
@@ -272,7 +272,7 @@ add_filter('protected_title_format', 'change_protected_title_prefix');
 // Customizing the excerpt text of protected posts
 function my_excerpt_protected( $excerpt ) {
     if ( post_password_required() )
-        $excerpt = '<p>This post is password protected.</p>';
+        $excerpt = '<p>' . __("This post is password protected.", 'minimal') . '</p>';
     return $excerpt;
 }
 add_filter( 'the_excerpt', 'my_excerpt_protected' );
@@ -280,6 +280,6 @@ add_filter( 'the_excerpt', 'my_excerpt_protected' );
 
 // Adding icon to title of private posts
 function change_private_title_prefix() {
-    return '%s <i class="material-icons private">verified_user</i>';
+    return '%s <i class="material-icons private">visibility_off</i>';
 }
 add_filter('private_title_format', 'change_private_title_prefix');

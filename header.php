@@ -25,7 +25,7 @@
       <!-- Top Nav -->
       <ul class="right hide-on-med-and-down thin-text full-nav">
         <li>
-          <a class="dropdown-button" href="#" data-activates="dropdown1"><?php _e('Archives', 'minimal'); ?>
+          <a id="archive" class="dropdown-button" href="#" data-activates="dropdown1"><?php _e('Archives', 'minimal'); ?>
             <i class="material-icons ag">arrow_drop_down</i>
           </a>
           <!-- Dropdown Structure -->
@@ -40,7 +40,7 @@
           </ul>
         </li>
         <li>
-          <a class="dropdown-button" href="#" data-activates="dropdown2"><?php _e('Categories', 'minimal'); ?>
+          <a id="category" class="dropdown-button" href="#" data-activates="dropdown2"><?php _e('Categories', 'minimal'); ?>
             <i class="material-icons ag">arrow_drop_down</i>
           </a>
           <!-- Dropdown Structure -->

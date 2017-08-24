@@ -57,3 +57,4 @@ Initial release
 1 how to add custom logo and adjust its css margins
 2 recommended size for featured images is 800 and up. Can also use pexels.com
 3 (Not recommended because takes up too much space but) to change index to show full content rather than excerpt change content.php > line 10
+4 Customizing options: explian how you can order archives asc or desc
