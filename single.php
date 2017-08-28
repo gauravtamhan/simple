@@ -14,7 +14,17 @@
     <?php
     if ( have_posts() ) : while ( have_posts() ) : the_post();
 
-      get_template_part( 'content-single', get_post_format() ); ?>
+      get_template_part( 'content-single', get_post_format() );
+
+      wp_link_pages(array(
+          'before'  => '<div class="row"><div class="col s12 m10 offset-m1"><ul class="pagination content-pagination"><li class="waves-effect">',
+          'after'   => '</li></ul></div></div>',
+          'separator'   => '</li><li class="waves-effect">',
+          'next_or_number'    => 'next',
+          'previouspagelink'   =>  '<i class="material-icons">arrow_back</i>',
+          'nextpagelink'      =>  '<i class="material-icons">arrow_forward</i>',
+        ));
+    ?>
 
     <div class="row">
       <div class="col s12 m10 offset-m1">

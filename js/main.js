@@ -84,11 +84,19 @@ jQuery(document).ready(function($) {
   $('form p.form-submit #submit').addClass('waves-effect waves-teal btn-flat');
   // $('#comment-pagination a').addClass('center-align');
 
+  // Prevents the screen from scrolling to top when archive or category is clicked in top nav on iPad
   $('a#category').click(function(e){
     e.preventDefault();
   });
   $('a#archive').click(function(e){
     e.preventDefault();
+  });
+
+  // For content pagination, aligns the next page arrow to the right hand side of the screen
+  $('.content-pagination i').each(function() {
+    if ('arrow_forward' == this.innerText) {
+      $(this).parent().parent().addClass('fl-right');
+    }
   });
 
 });
