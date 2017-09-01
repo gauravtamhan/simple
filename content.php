@@ -16,7 +16,7 @@
       <?php endif;
       the_excerpt();
       ?>
-    <a href="<?php the_permalink(); ?>" class="waves-effect waves-teal btn-flat"><?php _e('Read More', 'minimal'); ?></a>
+    <a href="<?php the_permalink(); ?>" class="waves-effect waves-teal btn-flat"><?php _e('Read More', 'minimal'); ?><span class="screen-reader-text"> about <?php the_title();?></span></a>
     <div class="post-meta-data">
       <a href="<?php comments_link(); ?>"><i class="tiny material-icons">chat_bubble</i>
         <?php

@@ -352,15 +352,6 @@ blockquote p.responsive-text {
   font-style: italic;
 }
 
-div.wp-caption p {
-  margin-top: 2px;
-  text-align: center;
-  color: #828282;
-  text-transform: uppercase;
-  font-weight: 300;
-  font-size: 14px;
-}
-
 div.container div.no-row-spacing {
   margin-bottom: 0;
 }
@@ -482,10 +473,6 @@ div.error .error-message span.as {
 ul.hide-on-med-and-down:not(.browser-default) {
   padding-left: 4px;
   margin-right: 10px;
-}
-
-.wp-caption {
-  text-align: center;
 }
 
 .dropdown-content li:hover {
@@ -637,6 +624,97 @@ td {
 .fl-right {
   float: right;
 }
+
+pre {
+  background: #eee;
+  padding: 1.6em;
+}
+
+.bypostauthor p.name>span i {
+  vertical-align: bottom;
+  margin-left: 5px;
+}
+
+.content ol li.responsive-text {
+  margin-bottom: 15px;
+}
+
+hr {
+  height: 1px;
+  border-style: solid;
+  border-width: 1px;
+  border-left-width: 0px;
+  border-right-width: 0px;
+  border-top: 1px solid #e0e0e0;
+  border-bottom: 1px solid transparent;
+  margin: 50px 0;
+}
+
+/* WordPress Core Classes
+-------------------------------------------------------------- */
+
+div.wp-caption .wp-caption-text, .gallery-caption {
+  margin-top: 2px;
+  text-align: center;
+  color: #828282;
+  font-weight: 300;
+  font-size: 15px;
+  margin-bottom: 0px;
+}
+
+.wp-caption {
+  max-width: 100%;
+  padding: 5px 3px 1px;
+}
+
+.alignnone {
+    margin: 5px 20px 20px 0;
+}
+
+.alignleft {
+    float: left;
+    margin: 5px 20px 20px 0;
+}
+
+.alignright {
+    float:right;
+    margin: 5px 0 20px 20px;
+}
+
+img.alignnone, img.alignleft,
+img.alignright, img.aligncenter,
+div.alignnone>img, div.alignleft>img,
+div.alignright>img, div.aligncenter>img,
+.wp-post-image, .gallery img {
+  border-radius: 6px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+}
+
+.gallery img {
+  border: none !important;
+}
+
+.gallery-item {
+  padding: 6px !important;
+}
+
+.aligncenter,
+div.aligncenter {
+    display: block;
+    margin: 5px auto 5px auto;
+}
+
+/* Text meant only for screen readers. */
+.screen-reader-text {
+  clip: rect(1px, 1px, 1px, 1px);
+  position: absolute !important;
+  white-space: nowrap;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+}
+
+/* ------------------------------------------------------------ */
 
 .custom-logo {
   margin-top: 20px;

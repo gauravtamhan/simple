@@ -15,6 +15,7 @@ A blog-focused theme with a design aesthetic centered around minimalism and anim
 1. In your admin panel, go to Appearance -> Themes and click the 'Add New' button.
 2. Type in Minimal in the search form and press the 'Enter' key on your keyboard.
 3. Click on the 'Activate' button to use your new theme right away.
+4. For information on customization options for this theme view the 'Customization' section below.
 
 
 == Copyright ==
@@ -54,7 +55,12 @@ Initial release
 
 == Notes ==
 
-1 how to add custom logo and adjust its css margins
-2 recommended size for featured images is 800 and up. Can also use pexels.com
-3 (Not recommended because takes up too much space but) to change index to show full content rather than excerpt change content.php > line 10
-4 Customizing options: explian how you can order archives asc or desc
+- recommended size for featured images is 800 and up. Can also use pexels.com
+
+
+== Customization ==
+
+- how to add custom logo and adjust its css margins
+- (Not recommended because takes up too much space but) to change index to show full content rather than excerpt change content.php > line 10
+- Customizing options: explian how you can order archives asc or desc
+- hr tag margin top/bottom for use in your posts. If you want a header then an underline

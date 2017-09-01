@@ -92,6 +92,9 @@ jQuery(document).ready(function($) {
     e.preventDefault();
   });
 
+  // Adds icon to comments written by post author
+  $('.bypostauthor p.name').append('<span><i class="material-icons">perm_identity</i></span>');
+
   // For content pagination, aligns the next page arrow to the right hand side of the screen
   $('.content-pagination i').each(function() {
     if ('arrow_forward' == this.innerText) {

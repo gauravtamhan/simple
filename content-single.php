@@ -1,5 +1,5 @@
 <div class="row">
-  <div id="post-<?php the_ID(); ?>" <?php post_class( 'col m10 offset-m1 links content' ); ?>>
+  <div id="post-<?php the_ID(); ?>" <?php post_class( 'col s12 m10 offset-m1 links content' ); ?>>
   <!-- <div class="col m10 offset-m1 links content"> -->
     <h1><?php the_title(); ?></h1>
     <span class="subtitle">
