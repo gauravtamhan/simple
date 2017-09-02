@@ -3,11 +3,16 @@ Author: Gaurav Tamhan
 Version: 1.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Tags: blog, one-column, custom-logo, featured-images, translation-ready, threaded-comments
+Tags: blog, one-column, custom-logo, editor-style, featured-images, translation-ready, threaded-comments
 
 == Description ==
 
-A blog-focused theme with a design aesthetic centered around minimalism and animation. Created using the MaterializeCSS framework, this theme utilizes big and beautiful typography which enhances readability and automatically adjusts to take advantage of a wide variety of screen sizes. Fluid animations help bring life to otherwise static content, giving your site a more modern appeal. Minimal was designed to be completely responsive and to showcase your content, meaning your site always looks great whether it’s on a smartphone, tablet, laptop, or desktop computer.
+A blog-focused theme with a design aesthetic centered around minimalism and animation. Created using
+the Materialize framework, this theme utilizes big and beautiful typography which enhances readability and
+automatically adjusts to take advantage of a wide variety of screen sizes. Fluid animations help bring life
+to otherwise static content, giving your site a more modern appeal. Minimal was designed to be completely
+responsive and to showcase your content, meaning your site always looks great whether it’s on a smartphone,
+tablet, laptop, or desktop computer.
 
 
 == Installation ==
@@ -55,7 +60,24 @@ Initial release
 
 == Notes ==
 
-- recommended size for featured images is 800 and up. Can also use pexels.com
+- When viewing the site in Edit mode (with the black WordPress admin bar floating up top) you might notice
+  that the title animation scrolls up slightly then begins to fade. This is not the expected behavior and
+  is due to the admin bar offsetting the title animation's trigger. This will only occur in Edit mode.
+  The title animation will function correctly when viewing the published site (i.e. after you have logged
+  out of wordpress and the admin bar disappears).
+
+  TL;DR -> The title animation will behave differently in Edit mode, but will work fine when the site is published.
+
+
+- When using this theme, the recommended size for featured images is between 800px - 1500px wide.
+  Images less than that will appear left aligned and won't span the width of the content area.
+  Images greater than that will take too long too load.
+
+
+- Icons Explained
+  * A grey lock icon will appear next to the title of a post that is password protected.
+  * A purple visibility-off icon will apear next to the title of a post that is private.
+  * A small person icon will appear next to the username of a comment written by the post author.
 
 
 == Customization ==

@@ -112,6 +112,16 @@ jQuery(document).ready(function($) {
     }
   });
 
+  // Moves the top nav and fade div down to make room for admin bar if in edit mode
+  $(function() {
+    var inEditMode = $('body.admin-bar').length > 0;
+    if (inEditMode) {
+      $('nav.nav-fixed').addClass('move-nav-down');
+      $('.side-nav').addClass('move-nav-down');
+      $('div.fadeOut').addClass('move-fade-div-down');
+    }
+  });
+
 
 });
 

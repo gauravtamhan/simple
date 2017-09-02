@@ -834,3 +834,28 @@ div.content ul>li {
 }
 
 /* ---------------------- END: Responsive Text ---------------------- */
+
+
+/* These classes move the top nav down
+ * to make room for admin bar in edit mode
+-------------------------------------------------------------- */
+
+@media only screen and (min-width: 601px) {
+  .move-nav-down {
+    margin-top: 46px;
+  }
+
+  .move-fade-div-down {
+    margin-top: 7.2em;
+  }
+}
+
+@media only screen and (min-width: 783px) {
+  .move-nav-down {
+    margin-top: 32px;
+  }
+
+  .move-fade-div-down {
+    margin-top: 6.4em;
+  }
+}
