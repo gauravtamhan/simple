@@ -626,8 +626,19 @@ td {
 }
 
 pre {
-  background: #eee;
+  background: #f2f4f5;
   padding: 1.6em;
+  font-family: Consolas, Monaco, monospace;
+  border-radius: 4px;
+}
+
+code {
+  padding: 2px 5px;
+  border-radius: 3px;
+  background: #f2f4f5;
+  font-family: Consolas, Monaco, monospace;
+  overflow: auto;
+  font-size: 14px;
 }
 
 .bypostauthor p.name>span i {
@@ -635,8 +646,8 @@ pre {
   margin-left: 5px;
 }
 
-.content ol li.responsive-text {
-  margin-bottom: 15px;
+.content ol li.responsive-text, .content ul li.responsive-text {
+  margin-bottom: 6px;
 }
 
 hr {
@@ -683,8 +694,8 @@ div.wp-caption .wp-caption-text, .gallery-caption {
 
 img.alignnone, img.alignleft,
 img.alignright, img.aligncenter,
-div.alignnone>img, div.alignleft>img,
-div.alignright>img, div.aligncenter>img,
+div.alignnone img, div.alignleft img,
+div.alignright img, div.aligncenter img,
 .wp-post-image, .gallery img {
   border-radius: 6px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
@@ -715,6 +726,18 @@ div.aligncenter {
 }
 
 /* ------------------------------------------------------------ */
+
+.extra-padding {
+  padding: 0 8px;
+}
+
+div.content ol, div.content ul {
+  padding: 0;
+}
+
+div.content ul>li {
+  list-style-type: disc;
+}
 
 .custom-logo {
   margin-top: 20px;

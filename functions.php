@@ -36,7 +36,10 @@ if ( ! isset( $content_width ) ) {
 
 
 // Adding editor style
-// add_editor_style();
+function minimal_add_editor_styles() {
+    add_editor_style('editor-style.css');
+}
+add_action( 'after_setup_theme', 'minimal_add_editor_styles' );
 
 
 // Adding feed links support

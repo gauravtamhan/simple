@@ -1,0 +1,283 @@
+/*
+Theme Name: Minimal
+Description: Used to style the TinyMCE editor.
+*/
+
+
+
+.mce-content-body p, .mce-content-body div, .mce-content-body h1,
+.mce-content-body h2, .mce-content-body h3, .mce-content-body h4,
+.mce-content-body h5, .mce-content-body h6 {
+  line-height: 1.5;
+}
+
+@font-face {
+  font-family: "Roboto";
+  src: local(Roboto Thin), url("./fonts/roboto/Roboto-Thin.woff2") format("woff2"), url("./fonts/roboto/Roboto-Thin.woff") format("woff");
+  font-weight: 100;
+}
+
+@font-face {
+  font-family: "Roboto";
+  src: local(Roboto Light), url("./fonts/roboto/Roboto-Light.woff2") format("woff2"), url("./fonts/roboto/Roboto-Light.woff") format("woff");
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: "Roboto";
+  src: local(Roboto Regular), url("./fonts/roboto/Roboto-Regular.woff2") format("woff2"), url("./fonts/roboto/Roboto-Regular.woff") format("woff");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "Roboto";
+  src: local(Roboto Medium), url("./fonts/roboto/Roboto-Medium.woff2") format("woff2"), url("./fonts/roboto/Roboto-Medium.woff") format("woff");
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: "Roboto";
+  src: local(Roboto Bold), url("./fonts/roboto/Roboto-Bold.woff2") format("woff2"), url("./fonts/roboto/Roboto-Bold.woff") format("woff");
+  font-weight: 700;
+}
+
+body {
+  color: #444;
+  line-height: 1.5;
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  margin: 0 auto;
+  max-width: 1280px;
+  width: 85%;
+}
+
+/* Headers
+-------------------------------------------------------------- */
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 400;
+  line-height: 1.1;
+}
+
+h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
+  font-weight: inherit;
+}
+
+h1 {
+  font-size: 4.2rem;
+  line-height: 110%;
+  margin: 2.1rem 0 1.68rem 0;
+}
+
+h2 {
+  font-size: 3.56rem;
+  line-height: 110%;
+  margin: 1.78rem 0 1.424rem 0;
+}
+
+h3 {
+  font-size: 2.92rem;
+  line-height: 110%;
+  margin: 1.46rem 0 1.168rem 0;
+}
+
+h4 {
+  font-size: 2.28rem;
+  line-height: 110%;
+  margin: 1.14rem 0 0.912rem 0;
+}
+
+h5 {
+  font-size: 1.64rem;
+  line-height: 110%;
+  margin: 0.82rem 0 0.656rem 0;
+}
+
+h6 {
+  font-size: 1rem;
+  line-height: 110%;
+  margin: 0.5rem 0 0.4rem 0;
+}
+
+/* ------------------------------------------------------------ */
+
+hr {
+  height: 1px;
+  border-style: solid;
+  border-width: 1px;
+  border-left-width: 0px;
+  border-right-width: 0px;
+  border-top: 1px solid #e0e0e0;
+  border-bottom: 1px solid transparent;
+  margin: 50px 0;
+}
+
+pre {
+  background: #f2f4f5;
+  border-radius: 4px;
+  padding: 1.6em;
+  overflow: auto;
+  font-size: 14px;
+  font-family: Consolas, Monaco, monospace;
+}
+
+.mce-content-body code {
+  padding: 2px 5px;
+  margin: 0;
+  border-radius: 3px;
+  color: #222;
+  background: #f2f4f5;
+  font-family: Consolas, Monaco, monospace;
+  font-size: 14px;
+  overflow: auto;
+}
+
+ol, ul {
+  padding: 0;
+}
+
+ol li, ul li {
+  margin-bottom: 6px;
+}
+
+ul>li {
+  list-style-type: disc;
+}
+
+blockquote {
+  margin: 20px 0;
+  padding-left: 1.5rem;
+  border-left-style: solid;
+  border-left-color: #42C4A5;
+  border-left-width: 3px;
+}
+
+blockquote p {
+  font-weight: 300;
+  color: #666;
+  font-style: italic;
+  margin: 0;
+}
+
+/* WordPress Core Classes
+-------------------------------------------------------------- */
+
+div .wp-caption .wp-caption-text, .wp-caption-dd, .gallery .gallery-caption {
+  margin-top: 2px;
+  text-align: center;
+  color: #828282;
+  font-weight: 300;
+  font-size: 15px;
+  margin-bottom: 0px;
+  font-family: "Roboto", sans-serif;
+}
+
+.wp-caption {
+  max-width: 100%;
+  padding: 5px 3px 1px;
+}
+
+.alignnone {
+    margin: 5px 20px 20px 0;
+}
+
+.alignleft {
+    float: left;
+    margin: 5px 20px 20px 0;
+}
+
+.alignright {
+    float:right;
+    margin: 5px 0 20px 20px;
+}
+
+img.alignnone, img.alignleft,
+img.alignright, img.aligncenter,
+div .alignnone img, div .alignleft img,
+div .alignright img, div .aligncenter img,
+.wp-post-image, .gallery img {
+  border-radius: 6px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+}
+
+.gallery img {
+  border: none !important;
+}
+
+.gallery-item {
+  padding: 6px !important;
+}
+
+.aligncenter,
+div.aligncenter {
+    display: block;
+    margin: 5px auto 5px auto;
+}
+
+/* Text meant only for screen readers. */
+.screen-reader-text {
+  clip: rect(1px, 1px, 1px, 1px);
+  position: absolute !important;
+  white-space: nowrap;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+}
+
+/* ---------------------- Responsive Text ---------------------- */
+
+
+@media only screen and (min-width: 360px) {
+  body {
+    font-size: 1.2rem;
+  }
+}
+
+@media only screen and (min-width: 390px) {
+  body {
+    font-size: 1.224rem;
+  }
+}
+
+@media only screen and (min-width: 420px) {
+  body {
+    font-size: 1.248rem;
+  }
+}
+
+@media only screen and (min-width: 450px) {
+  body{
+    font-size: 1.272rem;
+  }
+}
+
+@media only screen and (min-width: 480px) {
+  body{
+    font-size: 1.296rem;
+  }
+}
+
+@media only screen and (min-width: 510px) {
+  body{
+    font-size: 1.32rem;
+  }
+}
+
+@media only screen and (min-width: 540px) {
+  body{
+    font-size: 1.344rem;
+  }
+}
+
+@media only screen and (max-width: 360px) {
+  body{
+    font-size: 1.2rem;
+  }
+}
+
+/* ---------------------- END: Responsive Text ---------------------- */
+
+a {
+  text-decoration: none;
+  color: #1DE9C3;
+}

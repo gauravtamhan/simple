@@ -102,6 +102,17 @@ jQuery(document).ready(function($) {
     }
   });
 
+  // Adds extra padding if content contains a list to make room for number/bullets
+  $(function() {
+    if (($('#blog-post-content ol').length > 0) || ($('#blog-post-content ul').length > 0)) {
+      $('#blog-post-content').addClass("extra-padding");
+    }
+    if (($('#page-content ol').length > 0) || ($('#page-content ul').length > 0)) {
+      $('#page-content').addClass("extra-padding");
+    }
+  });
+
+
 });
 
 
