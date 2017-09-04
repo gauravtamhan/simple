@@ -3,7 +3,8 @@ Author: Gaurav Tamhan
 Version: 1.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Tags: blog, one-column, custom-logo, editor-style, featured-images, translation-ready, threaded-comments
+Tags: blog, one-column, full-width-template, custom-logo, editor-style, featured-images,
+      sticky-post, post-formats, translation-ready, threaded-comments
 
 == Description ==
 

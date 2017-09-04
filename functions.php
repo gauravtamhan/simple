@@ -29,11 +29,20 @@ add_theme_support( 'title-tag' );
 add_theme_support( 'post-thumbnails' );
 
 
+// Adding post format support
+add_theme_support( 'post-formats', array( 'aside', 'gallery', 'link', 'image', 'quote', 'status', 'video', 'audio', 'chat' ) );
+
 
 if ( ! isset( $content_width ) ) {
     $content_width = 800;
 }
 
+// Resize embeded videos
+add_filter( 'embed_defaults', 'smaller_embed_size' );
+
+function smaller_embed_size() {
+    return array( 'width' => 525, 'height' => 295 );
+}
 
 // Adding editor style
 function minimal_add_editor_styles() {
@@ -160,7 +169,7 @@ function wpbeginner_numeric_posts_nav() {
         $links[] = $paged + 1;
     }
 
-    echo '<div class="row"><div class="col s12 m10 offset-m1"><div class="navigation"><ul class="pagination center-align">' . "\n";
+    echo '<div class="row"><div class="col s12"><div class="navigation"><ul class="pagination center-align">' . "\n";
 
 
     /** Previous Post Link */

@@ -24,6 +24,17 @@
 
       get_template_part( 'content-page', get_post_format() );
 
+
+    ?>
+
+  </div>
+  <div class="small-bumper"></div>
+  <div class='container comments'>
+    <?php
+      if ( comments_open() ) :
+        comments_template();
+      endif;
+
     endwhile; endif;
     ?>
 

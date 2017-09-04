@@ -1,8 +1,7 @@
 <div class="row">
-  <div class="col m10 offset-m1 links content">
+  <div <?php post_class( 'col s12 m10 offset-m1 links content' ); ?>>
     <h4><?php the_title(); ?></h4>
     <span class="subtitle">
-      <!-- By <?php the_author(); ?> on <?php the_time(get_option('date_format')); ?> - <?php the_time(); ?> -->
       <?php
       echo _x('By', 'Preposition: the post was written by the author', 'minimal') . ' ' . get_the_author() . ' '
       . _x('on', 'Preposition: the post was written on a particular day', 'minimal') . ' ' . get_the_date() . ' - '
@@ -12,9 +11,27 @@
     <?php
       // check if the post has a Post Thumbnail assigned to it.
       if ( has_post_thumbnail() ) : ?>
-      <p> <?php the_post_thumbnail('full'); ?> </p>
+      <div class="post-thumbnail">
+        <a href="<?php the_permalink(); ?>">
+          <?php the_post_thumbnail('full'); ?>
+        </a>
+      </div>
       <?php endif;
-      the_excerpt();
+      $format = get_post_format() ? : 'standard';
+      if ( $post->post_content=="" ) {
+        if ($post->post_excerpt != "") {
+          the_excerpt();
+        } elseif ($format == 'standard') {
+          echo "<p></p>";
+        }
+      } else {
+        // do something for posts with content
+          the_excerpt();
+      };
+
+
+
+
       ?>
     <a href="<?php the_permalink(); ?>" class="waves-effect waves-teal btn-flat"><?php _e('Read More', 'minimal'); ?><span class="screen-reader-text"> about <?php the_title();?></span></a>
     <div class="post-meta-data">

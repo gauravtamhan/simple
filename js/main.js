@@ -122,6 +122,11 @@ jQuery(document).ready(function($) {
     }
   });
 
+  // Adds bubble class to chat formatted posts
+  $('div.format-chat p').wrap("<div class='bubble'></div>");
+
+  // Adds a label to sticky posts
+  $('div.sticky').prepend('<div class="pinned-posts"><a class="ui teal tag label">Featured</a></div>');
 
 });
 

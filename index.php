@@ -30,15 +30,16 @@
       <?php
       if ( have_posts() ) : while ( have_posts() ) : the_post();
 
-        get_template_part( 'content', get_post_format() );
+        get_template_part( 'template-parts/posts/content', get_post_format() );
 
-      endwhile;
+        endwhile;
+      ?>
+  </div>
+
+  <?php wpbeginner_numeric_posts_nav();
 
       endif;
-      ?>
-      <?php wpbeginner_numeric_posts_nav(); ?>
-
-  </div>
+  ?>
 
 <!-- Footer -->
 <?php get_footer(); ?>
