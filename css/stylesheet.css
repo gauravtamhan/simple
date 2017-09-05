@@ -151,6 +151,7 @@ ul.side-nav a {
   position: relative;
   color: #fff;
   text-decoration: none;
+  -webkit-font-smoothing: subpixel-antialiased !important;
 }
 
 ul.side-nav a:hover {
@@ -561,7 +562,6 @@ ul.dropdown-content li a:hover {
 
 .side-nav .collapsible-body-mod li a {
   font-weight: 200;
-  /*-webkit-font-smoothing: none;*/
 }
 
 .side-nav .collapsible-header {

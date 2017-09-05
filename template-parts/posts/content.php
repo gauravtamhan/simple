@@ -3,8 +3,8 @@
     <h4><?php the_title(); ?></h4>
     <span class="subtitle">
       <?php
-      echo _x('By', 'Preposition: the post was written by the author', 'minimal') . ' ' . get_the_author() . ' '
-      . _x('on', 'Preposition: the post was written on a particular day', 'minimal') . ' ' . get_the_date() . ' - '
+      echo _x('By', 'Preposition: the post was written by the author', 'loft') . ' ' . get_the_author() . ' '
+      . _x('on', 'Preposition: the post was written on a particular day', 'loft') . ' ' . get_the_date() . ' - '
       . get_the_time();
       ?>
     </span>
@@ -33,16 +33,15 @@
 
 
       ?>
-    <a href="<?php the_permalink(); ?>" class="waves-effect waves-teal btn-flat"><?php _e('Read More', 'minimal'); ?><span class="screen-reader-text"> about <?php the_title();?></span></a>
+    <a href="<?php the_permalink(); ?>" class="waves-effect waves-teal btn-flat"><?php _e('Read More', 'loft'); ?><span class="screen-reader-text"> about <?php the_title();?></span></a>
     <div class="post-meta-data">
       <a href="<?php comments_link(); ?>"><i class="tiny material-icons">chat_bubble</i>
         <?php
-        // comments_number('No Comments', '1 Comment', '% Comments');
         $num_comments = get_comments_number();
         if ($num_comments > 0) {
-          printf( _n( '%1$s Comment', '%1$s Comments', $num_comments, 'minimal' ), number_format_i18n($num_comments) );
+          printf( _n( '%1$s Comment', '%1$s Comments', $num_comments, 'loft' ), number_format_i18n($num_comments) );
         } else {
-          _e("No Comments", "minimal");
+          _e("No Comments", "loft");
         }
         ?>
       </a>

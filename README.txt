@@ -1,4 +1,4 @@
-=== Minimal ===
+=== Loft ===
 Author: Gaurav Tamhan
 Version: 1.0
 License: GPLv2 or later
@@ -11,7 +11,7 @@ Tags: blog, one-column, full-width-template, custom-logo, editor-style, custom-m
 A blog-focused theme with a design aesthetic centered around minimalism and animation. Created using
 the Materialize framework, this theme utilizes big and beautiful typography which enhances readability and
 automatically adjusts to take advantage of a wide variety of screen sizes. Fluid animations help bring life
-to otherwise static content, giving your site a more modern appeal. Minimal was designed to be completely
+to otherwise static content, giving your site a more modern appeal. Loft was designed to be completely
 responsive and to showcase your content, meaning your site always looks great whether it’s on a smartphone,
 tablet, laptop, or desktop computer.
 
@@ -19,15 +19,15 @@ tablet, laptop, or desktop computer.
 == Installation ==
 
 1. In your admin panel, go to Appearance -> Themes and click the 'Add New' button.
-2. Type in Minimal in the search form and press the 'Enter' key on your keyboard.
+2. Type in Loft in the search form and press the 'Enter' key on your keyboard.
 3. Click on the 'Activate' button to use your new theme right away.
 4. For information on customization options for this theme view the 'Customization' section below.
 
 
 == Copyright ==
 
-Minimal WordPress Theme, Copyright (C) 2017 Gaurav Tamhan
-Minimal is distributed under the terms of the GNU GPL
+Loft WordPress Theme, Copyright (C) 2017 Gaurav Tamhan
+Loft is distributed under the terms of the GNU GPL
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -39,7 +39,7 @@ but WITHOUT ANY WARRANTY; without even the implied warranty of
 MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 GNU General Public License for more details.
 
-Minimal bundles the following third-party resources:
+Loft bundles the following third-party resources:
 
 Materialize, Copyright (C) 2014-2017 Materialize
 License: MIT

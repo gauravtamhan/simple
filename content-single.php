@@ -4,8 +4,8 @@
     <h1><?php the_title(); ?></h1>
     <span class="subtitle">
       <?php
-      echo _x('By', 'Preposition: the post was written by the author', 'minimal') . ' ' . get_the_author() . ' '
-      . _x('on', 'Preposition: the post was written on a particular day', 'minimal') . ' ' . get_the_date() . ' - '
+      echo _x('By', 'Preposition: the post was written by the author', 'loft') . ' ' . get_the_author() . ' '
+      . _x('on', 'Preposition: the post was written on a particular day', 'loft') . ' ' . get_the_date() . ' - '
       . get_the_time();
       ?>
     </span>

@@ -1,7 +1,7 @@
 <?php
 
 // Add scripts and stylesheets
-function minimal_scripts() {
+function loft_load_scripts() {
     wp_enqueue_style('materialize_css', get_template_directory_uri() . '/css/materialize.css');
     wp_enqueue_script('materialize_js', get_template_directory_uri() . '/js/materialize.js', array('jquery'));
 
@@ -13,14 +13,14 @@ function minimal_scripts() {
     wp_enqueue_script('animation_js', get_template_directory_uri() . '/js/animation.gsap.js');
 
     wp_enqueue_style('stylesheet', get_template_directory_uri() . '/css/stylesheet.css');
-    wp_enqueue_style( 'minimal-style', get_stylesheet_uri() );
+    wp_enqueue_style( 'loft-style', get_stylesheet_uri() );
     wp_enqueue_script('main', get_template_directory_uri() . '/js/main.js', array('jquery'));
 }
 
-add_action( 'wp_enqueue_scripts', 'minimal_scripts' );
+add_action( 'wp_enqueue_scripts', 'loft_load_scripts' );
 
 // Make theme available for translation
-load_theme_textdomain( 'minimal' );
+load_theme_textdomain( 'loft' );
 
 // WordPress Titles
 add_theme_support( 'title-tag' );
@@ -31,10 +31,10 @@ add_theme_support( 'post-thumbnails' );
 
 
 // Adding support for wp_nav_menu()
-function register_my_menu() {
-  register_nav_menu('primary-menu',__( 'Primary Menu', 'minimal' ));
+function loft_register_menu() {
+  register_nav_menu('primary-menu',__( 'Primary Menu', 'loft' ));
 }
-add_action( 'init', 'register_my_menu' );
+add_action( 'init', 'loft_register_menu' );
 
 
 // Adding post format support
@@ -46,17 +46,17 @@ if ( ! isset( $content_width ) ) {
 }
 
 // Resize embeded videos
-add_filter( 'embed_defaults', 'smaller_embed_size' );
+add_filter( 'embed_defaults', 'loft_smaller_embed_size' );
 
-function smaller_embed_size() {
+function loft_smaller_embed_size() {
     return array( 'width' => 525, 'height' => 295 );
 }
 
 // Adding editor style
-function minimal_add_editor_styles() {
+function loft_add_editor_styles() {
     add_editor_style('editor-style.css');
 }
-add_action( 'after_setup_theme', 'minimal_add_editor_styles' );
+add_action( 'after_setup_theme', 'loft_add_editor_styles' );
 
 
 // Adding feed links support
@@ -64,21 +64,21 @@ add_theme_support( 'automatic-feed-links' );
 
 
 // Adding custom logo support
-function minimal_custom_logo_setup() {
+function loft_custom_logo_setup() {
     $defaults = array(
         'height'      => 24,
         'width'       => 24,
     );
     add_theme_support( 'custom-logo', $defaults );
 }
-add_action( 'after_setup_theme', 'minimal_custom_logo_setup' );
+add_action( 'after_setup_theme', 'loft_custom_logo_setup' );
 
 
 
 
 // Changing excerpt more - only works where excerpt is NOT hand-crafted
-add_filter('excerpt_more', 'auto_excerpt_more');
-function auto_excerpt_more($more) {
+add_filter('excerpt_more', 'loft_auto_excerpt_more');
+function loft_auto_excerpt_more($more) {
     return '&hellip;';
 }
 
@@ -103,13 +103,13 @@ function mytheme_comment($comment, $args, $depth) {
                 <?php if ( $args['avatar_size'] != 0 ) echo get_avatar( $comment, $args['avatar_size'] ); ?>
             </div>
             <div class="col s10">
-                <?php printf( __( '<p class="name">%s</p>', 'minimal'), get_comment_author_link() ); ?>
+                <?php printf( __( '<p class="name">%s</p>', 'loft'), get_comment_author_link() ); ?>
                 <?php
                     /* translators: 1: date, 2: time */
-                    printf( __('<p class="date">%1$s at %2$s</p>', 'minimal'), get_comment_date(),  get_comment_time() );
+                    printf( __('<p class="date">%1$s at %2$s</p>', 'loft'), get_comment_date(),  get_comment_time() );
                 ?>
                 <?php if ( $comment->comment_approved == '0' ) : ?>
-                     <p class="comment-awaiting-moderation"><?php _e( 'Your comment is awaiting moderation.', 'minimal' ); ?></p>
+                     <p class="comment-awaiting-moderation"><?php _e( 'Your comment is awaiting moderation.', 'loft' ); ?></p>
                 <?php endif; ?>
             </div>
         </div>
@@ -138,18 +138,18 @@ function mytheme_comment($comment, $args, $depth) {
 }
 
 // Reordering comment field to bottom or reply form
-function wp34731_move_comment_field_to_bottom( $fields ) {
+function loft_move_comment_field_to_bottom( $fields ) {
     $comment_field = $fields['comment'];
     unset( $fields['comment'] );
     $fields['comment'] = $comment_field;
 
     return $fields;
 }
-add_filter( 'comment_form_fields', 'wp34731_move_comment_field_to_bottom' );
+add_filter( 'comment_form_fields', 'loft_move_comment_field_to_bottom' );
 
 
 // Adding numbered pagination
-function wpbeginner_numeric_posts_nav() {
+function loft_numeric_posts_nav() {
     if( is_singular() )
         return;
     global $wp_query;
@@ -228,55 +228,55 @@ function wpbeginner_numeric_posts_nav() {
 
 
 // Customizing Password Protected Post output
-function my_password_form() {
+function loft_password_form() {
     global $post;
     $label = 'pwbox-'.( empty( $post->ID ) ? rand() : $post->ID );
-    $o = '<p>' . __( 'This post is password protected. To view it please enter your password below.', 'minimal' ) . '</p>'
+    $o = '<p>' . __( 'This post is password protected. To view it please enter your password below.', 'loft' ) . '</p>'
         . '<div class="small-bumper"></div>'
         . '<form action="' . esc_url( site_url( 'wp-login.php?action=postpass', 'login_post' ) ) . '" method="post">'
         . '<div class="row">'
         . '<div class="input-field col s12 m6">'
         . '<input name="post_password" id="' . $label . '" type="password" size="20" maxlength="20" />'
-        . '<label for="' . $label . '">' . __( "Password", 'minimal' ) . ' </label>'
+        . '<label for="' . $label . '">' . __( "Password", 'loft' ) . ' </label>'
         . '</div>'
         . '</div>'
         . '<div class="row">'
         . '<div class="col s12">'
-        . '<button class="waves-effect waves-teal btn-flat" type="submit" name="Submit">' . __("Submit", 'minimal') . '</button>'
+        . '<button class="waves-effect waves-teal btn-flat" type="submit" name="Submit">' . __("Submit", 'loft') . '</button>'
         . '</div>'
         . '</div>'
         . '</form>'
     ;
     return $o;
 }
-add_filter( 'the_password_form', 'my_password_form' );
+add_filter( 'the_password_form', 'loft_password_form' );
 
 
 // Adding the lock icon to protected posts
-function change_protected_title_prefix() {
+function loft_change_protected_title_prefix() {
     return '%s <i class="material-icons protect">lock</i>';
 }
-add_filter('protected_title_format', 'change_protected_title_prefix');
+add_filter('protected_title_format', 'loft_change_protected_title_prefix');
 
 
 // Customizing the excerpt text of protected posts
-function my_excerpt_protected( $excerpt ) {
+function loft_change_protected_excerpt( $excerpt ) {
     if ( post_password_required() )
-        $excerpt = '<p>' . __("This post is password protected.", 'minimal') . '</p>';
+        $excerpt = '<p>' . __("This post is password protected.", 'loft') . '</p>';
     return $excerpt;
 }
-add_filter( 'the_excerpt', 'my_excerpt_protected' );
+add_filter( 'the_excerpt', 'loft_change_protected_excerpt' );
 
 
 // Adding icon to title of private posts
-function change_private_title_prefix() {
+function loft_change_private_title_prefix() {
     return '%s <i class="material-icons private">visibility_off</i>';
 }
-add_filter('private_title_format', 'change_private_title_prefix');
+add_filter('private_title_format', 'loft_change_private_title_prefix');
 
 
 // Helper function to get menu
-function wpse45700_get_menu_by_location( $location ) {
+function loft_get_menu_by_location( $location ) {
     if( empty($location) ) return false;
 
     $locations = get_nav_menu_locations();

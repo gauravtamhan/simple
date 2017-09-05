@@ -4,7 +4,7 @@
     <!-- <h4><?php the_title(); ?></h4> -->
     <span class="subtitle">
       <?php
-      echo _x('By', 'Preposition: the post was written by the author', 'minimal') . ' ' . get_the_author() . ' ';
+      echo _x('By', 'Preposition: the post was written by the author', 'loft') . ' ' . get_the_author() . ' ';
       ?>
     </span>
     <?php
@@ -21,7 +21,7 @@
       }
 
       ?>
-    <!-- <a href="<?php the_permalink(); ?>" class="waves-effect waves-teal btn-flat"><?php _e('View Image', 'minimal'); ?><span class="screen-reader-text"> about <?php the_title();?></span></a> -->
+    <!-- <a href="<?php the_permalink(); ?>" class="waves-effect waves-teal btn-flat"><?php _e('View Image', 'loft'); ?><span class="screen-reader-text"> about <?php the_title();?></span></a> -->
     <div class="post-meta-data">
     </div>
     <div class="line-break"></div>

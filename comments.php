@@ -9,13 +9,13 @@
             'author' => '<p class="comment-form-author">' . '<div class="row">' . '<div class="input-field col s12 m7">' .
 
               '<input id="author" name="author" type="text" value="' . esc_attr( $commenter['comment_author'] ) . '" size="30"' . ' />'
-              . '<label for="author">' . __( 'Name', 'minimal' ) . '</label> ' . '</div></div></p>',
+              . '<label for="author">' . __( 'Name', 'loft' ) . '</label> ' . '</div></div></p>',
 
             'email'  => '<p class="comment-form-email">' . '<div class="row">' . '<div class="input-field col s12 m7">' .
 
               '<input id="email" name="email" type="text" value="' . esc_attr(  $commenter['comment_author_email'] ) . '" size="30"' .  ' />'.
 
-              '<label for="email">' . __( 'Email', 'minimal' ) . '</label> ' .
+              '<label for="email">' . __( 'Email', 'loft' ) . '</label> ' .
 
               '</div></div></p>',
 
@@ -23,9 +23,9 @@
           ) ),
           // change the comment notes
           'comment_notes_before' => '<p class="comment-notes">' .
-            __( 'Your email address will not be published.', 'minimal' ) . '</p>',
+            __( 'Your email address will not be published.', 'loft' ) . '</p>',
           // change the title of send button
-          'label_submit'=>__('Post', 'minimal'),
+          'label_submit'=>__('Post', 'loft'),
           // change the html of the title of the reply section
           'title_reply_before'=>'<h5 id="reply-title" class="comment-reply-title">',
           // change the html of the title of the reply section
@@ -36,9 +36,9 @@
           'logged_in_as' => '',
           // redefine your own textarea (the comment body)
           'comment_field' => '<p class="comment-form-comment"><div class="row"><div class="input-field col s12 m7"><textarea id="comment" class="materialize-textarea" name="comment"></textarea><label for="comment">'
-          . _x( 'Message', 'noun', 'minimal' ) . '</label></div></div></p>',
+          . _x( 'Message', 'noun', 'loft' ) . '</label></div></div></p>',
           // cancel reply
-          'cancel_reply_link'=>__('or cancel reply', 'minimal'),
+          'cancel_reply_link'=>__('or cancel reply', 'loft'),
           'cancel_reply_before'=>'<div class="cancel_reply"><span>',
           'cancel_reply_after'=>'</span></div>',
           'submit_button'=>'<button name="%1$s" type="submit" id="%2$s" class="%3$s">%4$s</button>',
@@ -49,7 +49,7 @@
     <?php if ( ! comments_open() && get_comments_number() && post_type_supports( get_post_type(), 'comments' ) ) : ?>
       <div class="row">
         <div class="col s12 m10 offset-m1">
-          <p class="no-comments"><?php _e('Commenting is closed for this post.', 'minimal'); ?></p>
+          <p class="no-comments"><?php _e('Commenting is closed for this post.', 'loft'); ?></p>
         </div>
       </div>
     <?php endif; ?>
@@ -58,7 +58,7 @@
       <div class="small-bumper"></div>
       <div class="row">
         <div class="col s12 m10 offset-m1">
-          <h5><?php _e("Discussion", "minimal"); ?></h5>
+          <h5><?php _e("Discussion", "loft"); ?></h5>
         </div>
       </div>
       <div class="row">
@@ -71,8 +71,8 @@
         </div>
       </div>
       <?php
-        $prev_link = get_previous_comments_link(__("&#8592; Older Comments", 'minimal'));
-        $next_link = get_next_comments_link(__("Newer Comments &#8594;", 'minimal'), 0);
+        $prev_link = get_previous_comments_link(__("&#8592; Older Comments", 'loft'));
+        $next_link = get_next_comments_link(__("Newer Comments &#8594;", 'loft'), 0);
 
         if ($prev_link || $next_link) {
           echo '<div id="comment-pagination" class="row no-row-spacing">';

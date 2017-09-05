@@ -36,7 +36,7 @@
       ?>
   </div>
 
-  <?php wpbeginner_numeric_posts_nav();
+  <?php loft_numeric_posts_nav();
 
       endif;
   ?>

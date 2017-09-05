@@ -48,7 +48,7 @@
   	  #
       $long_menu = '';
       $location = 'primary-menu';
-      $menu_obj = wpse45700_get_menu_by_location($location );
+      $menu_obj = loft_get_menu_by_location($location );
       $menu_items = wp_get_nav_menu_items($menu_obj->name);
       $count = 0;
       foreach( $menu_items as $menu_item ) {
@@ -66,7 +66,7 @@
       } else {
         $long_menu = '<li><a id="pages" class="dropdown-button" href="#" ' .
             'data-activates="dropdown3">' .
-            __('Pages', 'minimal') . '<i class="material-icons ag">arrow_drop_down</i></a>' .
+            __('Pages', 'loft') . '<i class="material-icons ag">arrow_drop_down</i></a>' .
             '<ul id="dropdown3" class="dropdown-content">' .
             wp_nav_menu(array(
               'theme_location' => 'primary-menu',
@@ -79,7 +79,7 @@
 
       <ul id="dd" class="right hide-on-med-and-down thin-text full-nav">
         <li>
-          <a id="archive" class="dropdown-button" href="#" data-activates="dropdown1"><?php _e('Archives', 'minimal'); ?>
+          <a id="archive" class="dropdown-button" href="#" data-activates="dropdown1"><?php _e('Archives', 'loft'); ?>
             <i class="material-icons ag">arrow_drop_down</i>
           </a>
           <ul id='dropdown1' class='dropdown-content'>
@@ -93,7 +93,7 @@
           </ul>
         </li>
         <li>
-          <a id="category" class="dropdown-button" href="#" data-activates="dropdown2"><?php _e('Categories', 'minimal'); ?>
+          <a id="category" class="dropdown-button" href="#" data-activates="dropdown2"><?php _e('Categories', 'loft'); ?>
             <i class="material-icons ag">arrow_drop_down</i>
           </a>
           <ul id='dropdown2' class='dropdown-content'>
@@ -117,11 +117,10 @@
 
   <!-- Side Nav -->
   <ul class="side-nav thin-text" id="mobile-demo">
-    <!-- <li><a class="waves-effect waves-teal" href="<?php echo esc_url( site_url() );?>"><?php _e('Home', 'minimal'); ?></a></li> -->
     <li class="no-padding">
       <ul class="collapsible collapsible-accordion">
         <li>
-          <a class="collapsible-header"><?php _e('Archives', 'minimal'); ?></a>
+          <a class="collapsible-header"><?php _e('Archives', 'loft'); ?></a>
           <div class="collapsible-body collapsible-body-mod">
             <ul>
               <?php
@@ -139,7 +138,7 @@
     <li class="no-padding">
       <ul class="collapsible collapsible-accordion">
         <li>
-          <a class="collapsible-header"><?php _e('Categories', 'minimal'); ?></a>
+          <a class="collapsible-header"><?php _e('Categories', 'loft'); ?></a>
           <div class="collapsible-body collapsible-body-mod">
             <ul>
               <?php
@@ -165,7 +164,7 @@
   <div class="ui tiny modal">
     <div class="ui icon header">
       <i class="material-icons large icon">search</i>
-      <?php _e('Type a few words and hit Enter to search!', 'minimal'); ?>
+      <?php _e('Type a few words and hit Enter to search!', 'loft'); ?>
     </div>
     <div class="content">
       <?php get_search_form(); ?>
