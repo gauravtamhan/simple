@@ -2,19 +2,19 @@
 
 // Add scripts and stylesheets
 function loft_load_scripts() {
-    wp_enqueue_style('materialize_css', get_template_directory_uri() . '/css/materialize.css');
-    wp_enqueue_script('materialize_js', get_template_directory_uri() . '/js/materialize.js', array('jquery'));
+    wp_enqueue_style('loft_materialize_css', get_template_directory_uri() . '/css/materialize.css');
+    wp_enqueue_script('loft_materialize_js', get_template_directory_uri() . '/js/materialize.js', array('jquery'));
 
-    wp_enqueue_style('semantic_css', get_template_directory_uri() . '/css/semantic.css');
-    wp_enqueue_script('semantic_js', get_template_directory_uri() . '/js/semantic.js', array('jquery'));
+    wp_enqueue_style('loft_semantic_css', get_template_directory_uri() . '/css/semantic.css');
+    wp_enqueue_script('loft_semantic_js', get_template_directory_uri() . '/js/semantic.js', array('jquery'));
 
-    wp_enqueue_script('tweenmax_js', get_template_directory_uri() . '/js/TweenMax.min.js');
-    wp_enqueue_script('scrollmagic_js', get_template_directory_uri() . '/js/ScrollMagic.js');
-    wp_enqueue_script('animation_js', get_template_directory_uri() . '/js/animation.gsap.js');
+    wp_enqueue_script('loft_tweenmax_js', get_template_directory_uri() . '/js/TweenMax.min.js');
+    wp_enqueue_script('loft_scrollmagic_js', get_template_directory_uri() . '/js/ScrollMagic.js');
+    wp_enqueue_script('loft_animation_js', get_template_directory_uri() . '/js/animation.gsap.js');
 
-    wp_enqueue_style('stylesheet', get_template_directory_uri() . '/css/stylesheet.css');
+    wp_enqueue_style('loft_stylesheet', get_template_directory_uri() . '/css/stylesheet.css');
     wp_enqueue_style( 'loft-style', get_stylesheet_uri() );
-    wp_enqueue_script('main', get_template_directory_uri() . '/js/main.js', array('jquery'));
+    wp_enqueue_script('loft_main', get_template_directory_uri() . '/js/main.js', array('jquery'));
 }
 
 add_action( 'wp_enqueue_scripts', 'loft_load_scripts' );
