@@ -8,6 +8,7 @@
   <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
+
   <!-- Nav Bar -->
   <nav class="nav-fixed">
     <div class="nav-wrapper white">
@@ -15,25 +16,77 @@
         $custom_logo_id = get_theme_mod( 'custom_logo' );
         $logo = wp_get_attachment_image_src( $custom_logo_id , 'full' );
         if ( has_custom_logo() ) {
-                echo '<a href="'. esc_url( site_url() ) .'"><img src="'. esc_url( $logo[0] ) .'" class="brand-logo custom-logo"></a>';
+                echo '<a href="'. esc_url( site_url() ) .'">' .
+                '<img src="'. esc_url( $logo[0] ) .'" class="brand-logo custom-logo"></a>';
         } else {
-                echo '<a href="'. esc_url( site_url() ) .'" class="brand-logo black-text"><i class="material-icons">turned_in_not</i></a>';
+                echo '<a href="'. esc_url( site_url() ) .
+                '" class="brand-logo black-text">' .
+                '<i class="material-icons">turned_in_not</i></a>';
         }
       ?>
 
-      <a href="#" data-activates="mobile-demo" class="button-collapse black-text"><i class="material-icons">menu</i></a>
+      <a href="#" data-activates="mobile-demo" class="button-collapse black-text">
+        <i class="material-icons">menu</i>
+      </a>
+
       <!-- Top Nav -->
-      <ul class="right hide-on-med-and-down thin-text full-nav">
+      <?php
+      #
+      ##
+      ###
+      ### To change the order of the Archives dropdown list from ascending
+  	  ### to descending change the value of the $order variable below.
+  	  ###
+  	  ### For an ascending list use: 'ASC'
+  	  ### For a descending list use: 'DESC'
+
+  	  $order = 'ASC';
+
+      ### Be sure to click 'Update File' to save your changes.
+  	  ###
+  	  ##
+  	  #
+      $long_menu = '';
+      $location = 'primary-menu';
+      $menu_obj = wpse45700_get_menu_by_location($location );
+      $menu_items = wp_get_nav_menu_items($menu_obj->name);
+      $count = 0;
+      foreach( $menu_items as $menu_item ) {
+        if ($menu_item->menu_item_parent != 0) {
+          $count++;
+        }
+      }
+
+      if (count($menu_items) < 4 && $count == 0) {
+        wp_nav_menu(array(
+          'theme_location' => 'primary-menu',
+          'container'      => 'ul',
+          'menu_class'     => 'right hide-on-med-and-down thin-text full-nav'
+          ));
+      } else {
+        $long_menu = '<li><a id="pages" class="dropdown-button" href="#" ' .
+            'data-activates="dropdown3">' .
+            __('Pages', 'minimal') . '<i class="material-icons ag">arrow_drop_down</i></a>' .
+            '<ul id="dropdown3" class="dropdown-content">' .
+            wp_nav_menu(array(
+              'theme_location' => 'primary-menu',
+              'items_wrap' => '%3$s',
+              'echo' => false)) .
+            '</ul></li>';
+      }
+
+      ?>
+
+      <ul id="dd" class="right hide-on-med-and-down thin-text full-nav">
         <li>
           <a id="archive" class="dropdown-button" href="#" data-activates="dropdown1"><?php _e('Archives', 'minimal'); ?>
             <i class="material-icons ag">arrow_drop_down</i>
           </a>
-          <!-- Dropdown Structure -->
           <ul id='dropdown1' class='dropdown-content'>
           <?php
             $args = array(
                 'type'=>'monthly',
-                'order'=>'ASC',
+                'order'=>$order,
               );
             wp_get_archives($args);
           ?>
@@ -43,7 +96,6 @@
           <a id="category" class="dropdown-button" href="#" data-activates="dropdown2"><?php _e('Categories', 'minimal'); ?>
             <i class="material-icons ag">arrow_drop_down</i>
           </a>
-          <!-- Dropdown Structure -->
           <ul id='dropdown2' class='dropdown-content'>
           <?php
             $args = array(
@@ -53,9 +105,10 @@
           ?>
           </ul>
         </li>
-        <li><a class="black-text" href="<?php echo esc_url( site_url() );?>"><?php _e('Home', 'minimal'); ?></a></li>
-        <?php wp_list_pages('&title_li='); ?>
+        <?php echo $long_menu; ?>
       </ul>
+
+
       <!-- //// END: Top Nav -->
       <a href="javascript:openModal();" class="black-text search-position"><i class="material-icons">search</i></a>
     </div>
@@ -64,7 +117,7 @@
 
   <!-- Side Nav -->
   <ul class="side-nav thin-text" id="mobile-demo">
-    <li><a class="waves-effect waves-teal" href="<?php echo esc_url( site_url() );?>"><?php _e('Home', 'minimal'); ?></a></li>
+    <!-- <li><a class="waves-effect waves-teal" href="<?php echo esc_url( site_url() );?>"><?php _e('Home', 'minimal'); ?></a></li> -->
     <li class="no-padding">
       <ul class="collapsible collapsible-accordion">
         <li>
@@ -74,7 +127,7 @@
               <?php
                 $args = array(
                     'type'=>'monthly',
-                    'order'=>'ASC',
+                    'order'=>$order,
                   );
                 wp_get_archives($args);
               ?>
@@ -100,7 +153,12 @@
         </li>
       </ul>
     </li>
-    <?php wp_list_pages('&title_li='); ?>
+    <?php wp_nav_menu(
+        array(
+          'theme_location' => 'primary-menu',
+          'items_wrap' => '%3$s'
+          )
+        ); ?>
   </ul>
 
   <!-- search modal -->

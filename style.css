@@ -7,5 +7,16 @@ Version: 1.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: minimal
-Tags: blog, one-column, full-width-template, custom-logo, editor-style, featured-images, sticky-post, post-formats, translation-ready, threaded-comments
+Tags: blog, one-column, full-width-template, custom-logo, editor-style, custom-menu, featured-images, sticky-post, post-formats, translation-ready, threaded-comments
 */
+
+
+.custom-logo {
+
+  /* Distance from the top. Larger number results in logo being further down. */
+  margin-top: 20px;
+
+  /* Distance from the left. Larger number results in logo being further right. */
+  margin-left: 2px;
+
+}

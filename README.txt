@@ -3,7 +3,7 @@ Author: Gaurav Tamhan
 Version: 1.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Tags: blog, one-column, full-width-template, custom-logo, editor-style, featured-images,
+Tags: blog, one-column, full-width-template, custom-logo, editor-style, custom-menu, featured-images,
       sticky-post, post-formats, translation-ready, threaded-comments
 
 == Description ==
@@ -83,7 +83,31 @@ Initial release
 
 == Customization ==
 
-- how to add custom logo and adjust its css margins
-- (Not recommended because takes up too much space but) to change index to show full content rather than excerpt change content.php > line 10
-- Customizing options: explian how you can order archives asc or desc
-- hr tag margin top/bottom for use in your posts. If you want a header then an underline
+------------
+CUSTOM LOGO
+------------
+To add a custom logo, login to the Wordpress admin panel and navigate to Appearance > Customize > Site Identity.
+From there click 'Select logo' and upload an image. Note: the recommended size for logos is 24px x 24px.
+
+If you want to adjust the position of the logo navigate to Appearance > Editor and select 'Stylesheet (style.css)'.
+From here you can adjust the CSS rules for the custom-logo class (margin-top and margin-left).
+When finished, click 'Update File' to see the changes.
+
+
+-----------------------------------------------
+CHANGE THE ORDER THAT ARCHIVE PAGES ARE LISTED
+-----------------------------------------------
+To change the order of the Archives dropdown list from ascending to descending login to the Wordpress
+admin panel and navigate to Appearance > Editor and select 'Theme Header (header.php)'. From here
+scroll down to the Top Nav section and follow the instructions. It should look something like this:
+
+                  <!-- Top Nav -->
+                  <?php
+                  #
+                  ##
+                  ###
+                  ### ...
+                  ### ...
+                  ###
+                  ##
+                  #

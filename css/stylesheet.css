@@ -132,7 +132,7 @@ nav ul.full-nav>li>a:not(.dropdown-button):hover:before {
   transform: scaleX(1);
 }
 
-nav ul.full-nav>li>a.active:before {
+nav ul.full-nav>li.current_page_item>a:before {
   content: "";
   position: absolute;
   width: 100%;
@@ -179,7 +179,7 @@ ul.side-nav a:hover:before {
   transform: scaleY(1);
 }
 
-ul.side-nav a.active-side:before {
+ul.side-nav li.current-menu-item a:before {
   content: "";
   position: absolute;
   width: 2px;
@@ -192,6 +192,18 @@ ul.side-nav a.active-side:before {
   transform: scaleY(1);
 }
 /* ------ END: Side Nav Hover Animation ------*/
+
+.dropdown-content {
+  max-height: 350px !important;
+}
+
+#dd {
+  margin-right: 0;
+}
+
+.big-nav {
+  margin-right: 30px !important;
+}
 
 .line-break {
   margin: 40px 0;
@@ -818,11 +830,6 @@ embed, iframe, object {
 .pinned-posts {
   float: right;
   margin-top: 1.14rem;
-}
-
-.custom-logo {
-  margin-top: 20px;
-  margin-left: 2px;
 }
 
 /* ---------------------- Responsive Text ---------------------- */

@@ -21,25 +21,6 @@ jQuery(document).ready(function($) {
 
 
   /*
-   *  CUSTOM FUNCTION:
-   *  code for active links remaining underlined on nav menus
-   */
-  $(function() {
-    var url = window.location.href;
-    $("nav a").each(function() {
-      if (url == (this.href)) {
-        $(this).closest("li>a").addClass("active");
-      }
-    });
-    $("ul.side-nav a").each(function() {
-      if (url == (this.href)) {
-        $(this).closest("li>a").addClass("active-side");
-      }
-    });
-  });
-
-
-  /*
    *  INIT:
    *  code for initializing components from Materialize
    */
@@ -127,6 +108,11 @@ jQuery(document).ready(function($) {
 
   // Adds a label to sticky posts
   $('div.sticky').prepend('<div class="pinned-posts"><a class="ui teal tag label">Featured</a></div>');
+
+  // Adds extra right margin if top nav shows pages dropdown
+  if ($('#dd>li').length > 2) {
+    $('#dd').addClass('big-nav');
+  }
 
 });
 

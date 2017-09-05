@@ -13,6 +13,7 @@ function minimal_scripts() {
     wp_enqueue_script('animation_js', get_template_directory_uri() . '/js/animation.gsap.js');
 
     wp_enqueue_style('stylesheet', get_template_directory_uri() . '/css/stylesheet.css');
+    wp_enqueue_style( 'minimal-style', get_stylesheet_uri() );
     wp_enqueue_script('main', get_template_directory_uri() . '/js/main.js', array('jquery'));
 }
 
@@ -27,6 +28,13 @@ add_theme_support( 'title-tag' );
 
 // Adding thumbnail support
 add_theme_support( 'post-thumbnails' );
+
+
+// Adding support for wp_nav_menu()
+function register_my_menu() {
+  register_nav_menu('primary-menu',__( 'Primary Menu', 'minimal' ));
+}
+add_action( 'init', 'register_my_menu' );
 
 
 // Adding post format support
@@ -265,3 +273,16 @@ function change_private_title_prefix() {
     return '%s <i class="material-icons private">visibility_off</i>';
 }
 add_filter('private_title_format', 'change_private_title_prefix');
+
+
+// Helper function to get menu
+function wpse45700_get_menu_by_location( $location ) {
+    if( empty($location) ) return false;
+
+    $locations = get_nav_menu_locations();
+    if( ! isset( $locations[$location] ) ) return false;
+
+    $menu_obj = get_term( $locations[$location], 'nav_menu' );
+
+    return $menu_obj;
+}
