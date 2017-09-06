@@ -35,44 +35,59 @@
       ##
       ###
       ### To change the order of the Archives dropdown list from ascending
-  	  ### to descending change the value of the $order variable below.
-  	  ###
-  	  ### For an ascending list use: 'ASC'
-  	  ### For a descending list use: 'DESC'
+      ### to descending change the value of the $order variable below.
+      ###
+      ### For an ascending list use: 'ASC'
+      ### For a descending list use: 'DESC'
 
-  	  $order = 'ASC';
+      $order = 'ASC';
 
       ### Be sure to click 'Update File' to save your changes.
-  	  ###
-  	  ##
-  	  #
+      ###
+      ##
+      #
       $long_menu = '';
       $location = 'primary-menu';
-      $menu_obj = loft_get_menu_by_location($location );
-      $menu_items = wp_get_nav_menu_items($menu_obj->name);
-      $count = 0;
-      foreach( $menu_items as $menu_item ) {
-        if ($menu_item->menu_item_parent != 0) {
-          $count++;
-        }
-      }
+      $menu_obj = loft_get_menu_by_location($location);
 
-      if (count($menu_items) < 4 && $count == 0) {
-        wp_nav_menu(array(
-          'theme_location' => 'primary-menu',
-          'container'      => 'ul',
-          'menu_class'     => 'right hide-on-med-and-down thin-text full-nav'
-          ));
-      } else {
+      // check if menu has location assigned
+      if ($menu_obj->errors) {
         $long_menu = '<li><a id="pages" class="dropdown-button" href="#" ' .
-            'data-activates="dropdown3">' .
-            __('Pages', 'loft') . '<i class="material-icons ag">arrow_drop_down</i></a>' .
-            '<ul id="dropdown3" class="dropdown-content">' .
-            wp_nav_menu(array(
+              'data-activates="dropdown3">' .
+              __('Pages', 'loft') . '<i class="material-icons ag">arrow_drop_down</i></a>' .
+              '<ul id="dropdown3" class="dropdown-content">' . wp_nav_menu(array(
               'theme_location' => 'primary-menu',
               'items_wrap' => '%3$s',
-              'echo' => false)) .
-            '</ul></li>';
+              'echo' => false
+              )). '</ul></li>';
+      } else {
+        $menu_items = wp_get_nav_menu_items($menu_obj->name);
+        $count = 0;
+        foreach( $menu_items as $menu_item ) {
+          if ($menu_item->menu_item_parent != 0) {
+            $count++;
+          }
+        }
+
+        if (count($menu_items) < 4 && $count == 0) {
+          wp_nav_menu(array(
+            'theme_location' => 'primary-menu',
+            'container'      => 'ul',
+            'menu_class'     => 'right hide-on-med-and-down thin-text full-nav',
+            'fallback_cb'    => false
+            ));
+        } else {
+          $long_menu = '<li><a id="pages" class="dropdown-button" href="#" ' .
+              'data-activates="dropdown3">' .
+              __('Pages', 'loft') . '<i class="material-icons ag">arrow_drop_down</i></a>' .
+              '<ul id="dropdown3" class="dropdown-content">' .
+              wp_nav_menu(array(
+                'theme_location' => 'primary-menu',
+                'items_wrap' => '%3$s',
+                'fallback_cb'    => false,
+                'echo' => false)) .
+              '</ul></li>';
+        }
       }
 
       ?>
