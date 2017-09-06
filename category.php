@@ -25,7 +25,7 @@
 
       endwhile; endif;
       ?>
-      <?php loft_numeric_posts_nav(); ?>
+      <?php merlot_numeric_posts_nav(); ?>
   </div>
 
 <!-- Footer -->

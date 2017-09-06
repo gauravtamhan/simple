@@ -7,8 +7,8 @@
     <div class="row error">
       <div class="col full m10 offset-m1">
         <div style="margin: 0 auto;">
-          <h2><?php _e('Archives', 'loft'); ?></h2>
-          <h4 class="error-message"><?php echo __("Viewing posts tagged", "loft") . ' '; ?><span class="as"><?php single_tag_title(); ?></span></h4>
+          <h2><?php _e('Archives', 'merlot'); ?></h2>
+          <h4 class="error-message"><?php echo __("Viewing posts tagged", "merlot") . ' '; ?><span class="as"><?php single_tag_title(); ?></span></h4>
         </div>
       </div>
     </div>
@@ -25,7 +25,7 @@
 
       endwhile; endif;
       ?>
-      <?php loft_numeric_posts_nav(); ?>
+      <?php merlot_numeric_posts_nav(); ?>
   </div>
 
 <!-- Footer -->

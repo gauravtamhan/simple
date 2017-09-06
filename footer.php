@@ -3,7 +3,7 @@
     <div class="container">
       <div class="row">
         <div class="col m10 offset-m1">
-          <p><?php echo __("Made with", "loft") . ' '; ?> <b>Materialize</b> | <?php echo __("Powered by", "loft") . ' '; ?> <b>Wordpress</b></p>
+          <p><?php echo __("Made with", "merlot") . ' '; ?> <b>Materialize</b> | <?php echo __("Powered by", "merlot") . ' '; ?> <b>Wordpress</b></p>
         </div>
       </div>
     </div>

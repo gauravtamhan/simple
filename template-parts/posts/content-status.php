@@ -3,7 +3,7 @@
     <h4 class="post-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4>
     <span class="subtitle">
       <?php
-      echo _x('By', 'Preposition: the post was written by the author', 'loft') . ' ' . get_the_author() . ' ';
+      echo _x('By', 'Preposition: the post was written by the author', 'merlot') . ' ' . get_the_author() . ' ';
       ?>
     </span>
     <?php

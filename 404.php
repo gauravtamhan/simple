@@ -11,7 +11,7 @@
         <div style="margin: 0 auto;">
           <h1>404</h1>
           <!-- <h3 class="error-message">Whoa there!</h3> -->
-          <h3 class="error-message"><?php _e("Page not found", "loft"); ?></h3>
+          <h3 class="error-message"><?php _e("Page not found", "merlot"); ?></h3>
         </div>
       </div>
     </div>
@@ -22,8 +22,8 @@
     <div class="row">
       <div class="col m10 offset-m1 links content">
       <p class="flow-text error-message"><?php _e("Looks like the page you are looking for doesn't exist.
-        You can select a menu item above to navigate to another page on this site or go back to your previous page.", "loft"); ?></p>
-      <a href="javascript:window.history.back()" class="waves-effect waves-teal btn-flat"><?php _e("Go Back", "loft"); ?></a>
+        You can select a menu item above to navigate to another page on this site or go back to your previous page.", "merlot"); ?></p>
+      <a href="javascript:window.history.back()" class="waves-effect waves-teal btn-flat"><?php _e("Go Back", "merlot"); ?></a>
       </div>
     </div>
     <!-- <div class="bumper"></div> -->

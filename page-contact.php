@@ -27,10 +27,10 @@ Template Name: Contact
   }
 
   //response messages
-  $missing_content = __("Please supply all information.", 'loft');
-  $email_invalid   = __("Please provide a valid email address.", 'loft');
-  $message_unsent  = __("Message was not sent. Try Again.", 'loft');
-  $message_sent    = __("Your message has been sent.", 'loft');
+  $missing_content = __("Please supply all information.", 'merlot');
+  $email_invalid   = __("Please provide a valid email address.", 'merlot');
+  $message_unsent  = __("Message was not sent. Try Again.", 'merlot');
+  $message_sent    = __("Your message has been sent.", 'merlot');
 
   //user posted variables
   $fname = (isset($_POST["message_fname"])) ? $_POST['message_fname'] : "";
@@ -112,29 +112,29 @@ Template Name: Contact
         <div class="row">
           <div class="input-field col s12 m12 l6">
             <input id="first_name" type="text" name="message_fname" value="<?php echo esc_attr($_POST['message_fname']); ?>">
-            <label for="first_name"><?php _e("First Name", "loft"); ?></label>
+            <label for="first_name"><?php _e("First Name", "merlot"); ?></label>
           </div>
           <div class="input-field col s12 m12 l6">
             <input id="last_name" type="text" name="message_lname" value="<?php echo esc_attr($_POST['message_lname']); ?>">
-            <label for="last_name"><?php _e("Last Name", "loft"); ?></label>
+            <label for="last_name"><?php _e("Last Name", "merlot"); ?></label>
           </div>
         </div>
         <div class="row">
           <div class="input-field col s12">
             <input id="email" type="text" name="message_email" value="<?php echo esc_attr($_POST['message_email']); ?>">
-            <label for="email"><?php _e("Email", "loft"); ?></label>
+            <label for="email"><?php _e("Email", "merlot"); ?></label>
           </div>
         </div>
         <div class="row">
           <div class="input-field col s12">
             <textarea id="textarea1" class="materialize-textarea" name="message_text"><?php echo esc_textarea($_POST['message_text']); ?></textarea>
-            <label for="textarea1"><?php _e("Message", "loft"); ?></label>
+            <label for="textarea1"><?php _e("Message", "merlot"); ?></label>
           </div>
         </div>
         <div class="row links">
           <div class="col s12">
             <input type="hidden" name="submitted" value="1">
-            <button class="waves-effect waves-teal btn-flat" type="submit" name="submit"><?php _e("Submit", "loft"); ?></button>
+            <button class="waves-effect waves-teal btn-flat" type="submit" name="submit"><?php _e("Submit", "merlot"); ?></button>
           </div>
         </div>
       </form>

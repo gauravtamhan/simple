@@ -48,13 +48,23 @@
       #
       $long_menu = '';
       $location = 'primary-menu';
-      $menu_obj = loft_get_menu_by_location($location);
-
+      $menu_obj = merlot_get_menu_by_location($location);
+      // check if menu object exists
+      if (!$menu_obj) {
+        $long_menu = '<li><a id="pages" class="dropdown-button" href="#" ' .
+        'data-activates="dropdown3">' .
+        __('Pages', 'merlot') . '<i class="material-icons ag">arrow_drop_down</i></a>' .
+        '<ul id="dropdown3" class="dropdown-content">' . wp_nav_menu(array(
+        'theme_location' => 'primary-menu',
+        'items_wrap' => '%3$s',
+        'echo' => false
+        )). '</ul></li>';
+      }
       // check if menu has location assigned
-      if ($menu_obj->errors) {
+      elseif ($menu_obj->errors) {
         $long_menu = '<li><a id="pages" class="dropdown-button" href="#" ' .
               'data-activates="dropdown3">' .
-              __('Pages', 'loft') . '<i class="material-icons ag">arrow_drop_down</i></a>' .
+              __('Pages', 'merlot') . '<i class="material-icons ag">arrow_drop_down</i></a>' .
               '<ul id="dropdown3" class="dropdown-content">' . wp_nav_menu(array(
               'theme_location' => 'primary-menu',
               'items_wrap' => '%3$s',
@@ -79,7 +89,7 @@
         } else {
           $long_menu = '<li><a id="pages" class="dropdown-button" href="#" ' .
               'data-activates="dropdown3">' .
-              __('Pages', 'loft') . '<i class="material-icons ag">arrow_drop_down</i></a>' .
+              __('Pages', 'merlot') . '<i class="material-icons ag">arrow_drop_down</i></a>' .
               '<ul id="dropdown3" class="dropdown-content">' .
               wp_nav_menu(array(
                 'theme_location' => 'primary-menu',
@@ -94,7 +104,7 @@
 
       <ul id="dd" class="right hide-on-med-and-down thin-text full-nav">
         <li>
-          <a id="archive" class="dropdown-button" href="#" data-activates="dropdown1"><?php _e('Archives', 'loft'); ?>
+          <a id="archive" class="dropdown-button" href="#" data-activates="dropdown1"><?php _e('Archives', 'merlot'); ?>
             <i class="material-icons ag">arrow_drop_down</i>
           </a>
           <ul id='dropdown1' class='dropdown-content'>
@@ -108,7 +118,7 @@
           </ul>
         </li>
         <li>
-          <a id="category" class="dropdown-button" href="#" data-activates="dropdown2"><?php _e('Categories', 'loft'); ?>
+          <a id="category" class="dropdown-button" href="#" data-activates="dropdown2"><?php _e('Categories', 'merlot'); ?>
             <i class="material-icons ag">arrow_drop_down</i>
           </a>
           <ul id='dropdown2' class='dropdown-content'>
@@ -135,7 +145,7 @@
     <li class="no-padding">
       <ul class="collapsible collapsible-accordion">
         <li>
-          <a class="collapsible-header"><?php _e('Archives', 'loft'); ?></a>
+          <a class="collapsible-header"><?php _e('Archives', 'merlot'); ?></a>
           <div class="collapsible-body collapsible-body-mod">
             <ul>
               <?php
@@ -153,7 +163,7 @@
     <li class="no-padding">
       <ul class="collapsible collapsible-accordion">
         <li>
-          <a class="collapsible-header"><?php _e('Categories', 'loft'); ?></a>
+          <a class="collapsible-header"><?php _e('Categories', 'merlot'); ?></a>
           <div class="collapsible-body collapsible-body-mod">
             <ul>
               <?php
@@ -179,7 +189,7 @@
   <div class="ui tiny modal">
     <div class="ui icon header">
       <i class="material-icons large icon">search</i>
-      <?php _e('Type a few words and hit Enter to search!', 'loft'); ?>
+      <?php _e('Type a few words and hit Enter to search!', 'merlot'); ?>
     </div>
     <div class="content">
       <?php get_search_form(); ?>
